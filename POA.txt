@@ -1,0 +1,43 @@
+Objective
+You are given a list of 711 notable startups in Greece.
+Develop a tool to report in realtime the activities of any given company.
+
+
+Naive-Brute-Force POA (tasks):
+    (Data Collection)
+    * [X] Scrape or manually input each company name into a Python List
+    * [-] For each company name find & download their company website or a website about them
+
+    (Data Engineering)
+    * [-] If multiple signals are used then organise the file structure into:
+      Company name -> (then a subfolder for each signal i.e. GoogleTop5Results, LinkedIn, ...)
+    * [X] For each downloaded webpage as a .html file perform cleaning for each file
+        * [O] Cleaning is done but it only extracts <p> paragraphs this could be extended
+
+    (Data Analysis)
+    * [X] Pass sections of text to text-davinci-003 w/ a relevant prompt & store the output
+    * [O] Experiment with POS-tagging
+    * [-] Compile and process the output to contain only relevant information
+
+    (Data Visualization)
+    * [-] Create 1 to 7 useful reports
+    * [-] Create an interactive interface with a visualization library
+    * [-] Investigate which libraries or tools are best for creating the interactive visualization
+          note libraries 'pygame' can be used with 'matplotlib'
+
+
+Tool (Version-Alpha):
+    (https://www.google.com/search?q=uk+company+names)
+    * [X] Be able to input company name into interface
+    * [X] Be able to pass URL to their company website
+    * [-] Interface outputs progress text to the user
+    * [-] Program searches, stores, & cleans their company website
+    * [-] Program searches, stores, & cleans the top 5 results
+    * [-] For each stored webpage determine whether the page is related to
+          our target company (delete or ignore pages that are not related)
+    * [-] From each related and useful webpage generate a list of
+          company activities
+
+
+Tool (Version-Pre-Processed):
+    * [-] Act on pre-processed data
