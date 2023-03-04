@@ -17,6 +17,9 @@ def on_enter(event=None):
     text = URL_Functions.extract_text(soup)
     # Analysis - pass .html text to LLM
     prompt_  = Analysis_LLM.create_prompt(text)
+    # Todo: openai.error.InvalidRequestError: This model's maximum context length is 4097 tokens,
+    #  however you requested 6042 tokens (4042 in your prompt; 2000 for the completion).
+    #  Please reduce your prompt; or completion length.
     response = Analysis_LLM.gen_response(prompt_)
     output   = Analysis_LLM.response_text(response)
     print(output)
