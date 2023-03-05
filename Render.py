@@ -11,12 +11,12 @@ def on_enter(event=None):
     # Disable the text fields so they can no longer accept input
     entry1.config(state="disable")
     entry2.config(state="disable")
-    # URL and .html processing
+    # URL and .html processing and storage (for later)
     urls = URL_Functions.google_search(search_str=company_name)
     soup = URL_Functions.url_to_soup_obj(urls[0])
-    text = URL_Functions.extract_text(soup)
+    text = URL_Functions.extract_text(soup, headers=False)
     # Analysis - pass .html text to LLM
-    prompt_  = Analysis_LLM.create_prompt(text)
+    prompt_  = Analysis_LLM.create_prompt(text[1000:3000])
     # Todo: openai.error.InvalidRequestError: This model's maximum context length is 4097 tokens,
     #  however you requested 6042 tokens (4042 in your prompt; 2000 for the completion).
     #  Please reduce your prompt; or completion length.
