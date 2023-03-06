@@ -29,6 +29,7 @@ Please note these datasets and `Render.py` are not integrated together.
 * The dataset storing the **'human-friendly-readable'** text can be found [here](/Greek%20Startups/Excel%20Files%20&%20Processing/soup_to_text).
 
 ## Suggested Improvements
+* Implement different NLP techniques to generate the desired output (such as POS-tagging with grammatical rules, ...)
 * Improve the `Render.py` web crawler to not take the first Google result but instead all results
   on the first page then scrape all of them for relevance to the company (as the first result may not 
   be the company's website).
@@ -38,7 +39,7 @@ Please note these datasets and `Render.py` are not integrated together.
   Instagram, Facebook, LinkedIn, ...).
 * Add more input fields to the `Render.py` to dynamically add to the prompt to refine the output.
 * For data collection create an **interactive data visualization** component(s).
-* Project code and files could be reorganised
+* Project code and files could be reorganised.
 
 ## Requirements
 To run the project the following libraries are required please run the following command below to install each package.
