@@ -10,8 +10,9 @@ Next Steps:
       These results should be written to a .csv file.
     * [-] Solve for the URL links that returned 'no'.
     * [X] For each webpage extract the whole .html code
-    * [-] For each webpage extract the human-friendly readable text from
+    * [X] For each webpage extract the human-friendly readable text from
       and store each in a text document
+        * [-] Improve extraction
     * [-] In the tool be able to pass the text file to the GPT model
 
 
