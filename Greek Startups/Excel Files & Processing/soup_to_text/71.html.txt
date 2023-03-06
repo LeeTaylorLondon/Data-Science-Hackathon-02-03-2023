@@ -1,0 +1,11 @@
+﻿Eleftherios Karabatsakis (Co-Founder & CEO):9y experience in e-commerce, partnerships, customer support, and operations.3x tech/startup event organizer
+60+ active contracts with charge point operators across 16+ countries
+Carge is aneMSP (e-Mobility Service Provider)that unifies all charge point networks across Europe, by using smart algorithms for grid balancing. The app is currently available on AppStore, PlayStore, HuaweiStore.
+1st app in SEE that supports Apple CarPlay and Android Auto
+Carge is the first e-Mobility Service Provider in the world that optimizes the energy consumption spikes and runscustom-built smart algorithmsto use the remaining power capacity forgrid balancing. This helps Electricity Providers balance the power distribution and act friendly to the environment.In addition, the Carge app is connected with 40+ car models to store data and show it to the users in real-time, such as battery capacity, state of charge, odometer, etc.
+Before Carge, EV (Electric Vehicle) drivers had to download multiple applications, register separately and pay a fixed amount in advance, due to network exclusivity. Whenever they wanted to charge their car, they had to open each charge point operator's application and find the nearest station. This makes the customer experience cumbersome.Carge app helps EV driversto:
+We are a diverse team with longstanding relations. The two co-founders have been working together for more than 3 years in another successful startup. Therefore, they decided to build something new related to the e-mobility market which will have a 25% compound annual growth rate by 2030 (automotive software and integration services).
+Peter Benos (Co-Founder & CTO):12y experience in mobile apps, web apps, complex cloud infrastructure design/implementation, and software architecture.5y tech team leader
+June 2022: Carge was acquired by Public Power Corporation (PPC S.A.) for an undisclosed amount.
+© 2023, All rigths reserved - Licensed to National Startup Registry, a Mantis Innovation Management System installation.
+EV charging mobile app that uses smart algorithms for grid balancing.

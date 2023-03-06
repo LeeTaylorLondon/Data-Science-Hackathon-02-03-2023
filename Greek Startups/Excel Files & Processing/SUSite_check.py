@@ -57,7 +57,51 @@ def write_soup_to_file(file: str, directory: str) -> None:
             print(f"Error fetching URL: {url.strip()}")
 
 
+def extract_text(directory, headers=True):
+    # Loop through all files in the directory
+    for filename in os.listdir(directory):
+        # Check if the file is a .html file
+        if filename.endswith(".html"):
+            file_path = os.path.join(directory, filename)
+            with open(file_path, "r", encoding='utf-8-sig') as file:
+                soup = BS(file, 'html5lib')
+
+                # Find all HTML elements that contain the main content
+                if headers:
+                    content_elements = soup.find_all(
+                        ["p", "h1", "h2", "h3", "h4", "h5", "h6", "a", "li", "span", "strong", "em"])
+                elif not headers:
+                    content_elements = soup.find_all(["p", "a", "li", "span", "strong", "em"])
+
+                # Concatenate the text from all content elements
+                content = [element.text.strip() for element in content_elements]
+                for i, v in enumerate(content):
+                    content[i] = v.replace('\n', '')
+                    content[i] = content[i].replace('  ', '')
+
+                # Remove keywords
+                content = [element for element in content if element.strip() != '']  # Remove blanks
+                content = [element for element in content if
+                           len(element.split()) > 8]  # Remove lines with less than X words
+                # content = [element for element in content if not element.lower().__contains__('site')]
+                content = [element for element in content if not element.lower().__contains__('cookie')]
+                content = [element for element in content if not element.lower().__contains__('sign in')]
+                content = [element for element in content if not element.lower().__contains__('instagram')]
+                content = [element for element in content if not element.lower().__contains__('contact us')]
+
+                # Combine content into a string
+                content = '\n'.join(set(content))
+
+                # Write the extracted text to a file
+                # output_file = os.path.splitext(file_path)[0] + ".txt"
+                with open(f'soup_to_text/{filename}.txt', "w", encoding='utf-8-sig') as output:
+                    output.write(content)
+    # Mark EOF
+    pass
+
+
 if __name__ == '__main__':
     # check_html_file("SU_websites.txt")
     # extract_yes_websites("websites_check.csv", "yes_websites.txt")
-    write_soup_to_file('yes_websites.txt', 'soup_objects')
+    # write_soup_to_file('yes_websites.txt', 'soup_objects')
+    extract_text("soup_objects")

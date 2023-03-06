@@ -1,0 +1,14 @@
+﻿With a vision to lead Data & Analytics in omni channel retail, Convert Group enables Consumer Goods & Consumer Healthcare manufacturers and retailers to access meaningful and actionable commercial, marketing & eCommerce data in a seamless, unified way.Our Enterprise SaaS products:
+Emphasis and investment in a scalable, cloud-native service-oriented architecture.
+Convert Group is leading the Data & Analytics Market Intelligencefrontier in theConsumer Healthcare & FMCG eCommercesegments (online pharmacy, online grocery & online beauty) with its innovative Enterprise SaaS platforms. The firm has already launched its offering in Spain, Italy, Mexico, Egypt, Romania, Serbia, Bulgaria, Slovenia, Croatia, Russia, Slovakia & Greece and has an aggressive 5-year expansion plan.
+Convert Group will fundraise its Series A in Q4'23.
+The company boasts a rich portfolio of 10 out of the 15 biggest global FMCG firms including LOreal, P&G, Unilever, J&J, The Coca-Cola Company, Nestle, RB, GSK, Henkel, Bayer, Beiersdorf, FrieslandCampina, Heineken, Barilla, Colgate Palmolive, Perrigo, Pierre Fabre, Abbott and hundreds of dominant online retailers including Ahold Delhaize, Carrefour, Sephora and Rakuten in Europe, Latin America & Africa countries.
+Our strong points are that we have global leadership in our Market Intelligence products, sales-driven mentality, an awarded 4-years-in-a-row best workplace with 63 talented engineers, data scientists, consultants and analysts and a cost-efficient operations center in Athens, Greece. We are also a COVID-19 boosted company as we focus on online pharmacies, online groceries, eCommerce and Data & Analytics that are all booming.
+Innovative techniques to tackle product matching at scale, a process that is central to SKU-level reporting.
+Emphasis on data visualization and UX to enable the extraction of actionable insights from data and create a B2C-like experience, disrupting a traditional B2B space.
+© 2023, All rigths reserved - Licensed to National Startup Registry, a Mantis Innovation Management System installation.
+Highly agile in-house engineering team harnessing a modern technological stack, DevOps practices like infrastructure and configuration as code.
+Playbook to open new markets, automated processes for data aggregation and processing.
+Feature-rich ETL workflows for the ingestion of sales data from a variety of sources.
+Enterprise SaaS in Data and Analytics in eCommerce and omnichannel Retail
+Powerful tools to extract features from images and evaluate image similarity, utilizing deep learning techniques.
