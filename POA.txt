@@ -3,6 +3,18 @@ You are given a list of 711 notable startups in Greece.
 Develop a tool to report in realtime the activities of any given company.
 
 
+Next Steps:
+    * [-] For each website in 'Greek Startups/Excel Files & Processing/
+      SU_websites.txt' using BS check if the website returns a .html file
+      for URL that does write 'yes' otherwise write 'no' with the URL.
+      These results should be written to a .csv file.
+    * [-] Solve for the URL links that returned 'no'.
+    * [-] For each webpage extract the whole .html code
+    * [-] For each webpage extract the human-friendly readable text from
+      and store each in a text document
+    * [-] In the tool be able to pass the text file to the GPT model
+
+
 Naive-Brute-Force POA (tasks):
     (Data Collection)
     * [X] Scrape or manually input each company name into a Python List

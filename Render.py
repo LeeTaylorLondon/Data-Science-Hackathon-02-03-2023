@@ -11,7 +11,10 @@ def process_text(text_):
     if len(text_) > 3000:
         text_ = text_[1000:3000]
     else:
-        text_ = text_[:2000]
+        try:
+            text_ = text_[:2000]
+        except IndexError:
+            pass
     return text_
 
 
@@ -36,7 +39,7 @@ def on_enter(event=None):
     print(output.strip())
     # Enable the text fields
     entry1.config(state="normal")
-    entry2.config(state="normal")
+    # entry2.config(state="normal")
     # Mark EOF
     pass
 
@@ -59,10 +62,11 @@ if __name__ == '__main__':
     entry2 = tk.Entry(root, width=50)
     label2.pack()
     entry2.pack()
+    entry2.config(state="disable")
 
     # Create submit button
-    button = tk.Button(root, text="Submit", command=on_enter)
-    button.pack()
+    button = tk.Button(root, text="Submit", command=on_enter, width=40)
+    button.pack(pady=20)
 
     # Bind the `<Return>` key to the `on_enter` function
     root.bind("<Return>", on_enter)

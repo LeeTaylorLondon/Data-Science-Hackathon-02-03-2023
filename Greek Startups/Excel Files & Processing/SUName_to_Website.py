@@ -1,7 +1,7 @@
 # Author: Lee Taylor
 """
 This code converts a company name from a .csv file into a lowercase string with hyphens
-in place of spaces. It first reads in the contents of the file "combined_csv.csv" and
+in place of spaces. It first reads in the contents of the file "SU_info.csv" and
 stores the lines in a list. Then it loops through the first line (lines[1:2]), which
 should contain the company name, and splits the line into individual words. For each
 word, it first checks if the word contains a comma (indicating that it is part of a
@@ -24,7 +24,7 @@ def remove_punctuation(input_string):
     return no_punct
 
 
-with open("combined_csv.csv", 'r', encoding='utf-8-sig') as f:
+with open("SU_info.csv", 'r', encoding='utf-8-sig') as f:
     lines = f.readlines()
 
 
@@ -47,5 +47,5 @@ for i, v in enumerate(names):
     name_strs[i] = f"{prefix}{name_strs[i]}/\n"
 
 
-with open("company_websites.txt", 'w', encoding='utf-8-sig') as f:
+with open("SU_websites.txt", 'w', encoding='utf-8-sig') as f:
     f.writelines(name_strs)
