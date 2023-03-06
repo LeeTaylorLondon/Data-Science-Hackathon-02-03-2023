@@ -47,5 +47,5 @@ for i, v in enumerate(names):
     name_strs[i] = f"{prefix}{name_strs[i]}/\n"
 
 
-with open("names.txt", 'w', encoding='utf-8-sig') as f:
+with open("company_websites.txt", 'w', encoding='utf-8-sig') as f:
     f.writelines(name_strs)

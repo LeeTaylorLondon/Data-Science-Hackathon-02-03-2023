@@ -1,7 +1,7 @@
 # Company Activities Interpretation Tool
 Develop a tool to report in realtime the activities of any given company.
 
-# How to Use
+## How to Use
 `Render.py` creates a GUI application using tkinter in python, 
 which allows the user to enter the name of a company and its 
 webpage URL. When the user presses the "Submit" button or the 
@@ -13,3 +13,6 @@ HTML content of the webpage and extract the human-readable text from
 it, respectively. This text is then passed to the `create_prompt`, 
 `gen_response`, and `response_text` functions from the Analysis_LLM 
 module to generate an output, which is then printed to the console. 
+
+## `Render.py` Example Usage
+![Image](/images/rm1.png)

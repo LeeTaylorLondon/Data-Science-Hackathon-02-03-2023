@@ -14,10 +14,15 @@ import time
 openai.api_key = api_key.API_KEY
 
 
-def create_prompt(paragraphs, user_topic=f'Write a bullet point list only '
-                                    f'containing activities directly conducted by the company:'):
+def create_prompt(paragraphs, suffix='', company_name='',
+                  user_topic=f'Write a bullet point list only containing activities '
+                             f'directly conducted by an organisation, this is the information '
+                             f'parsed from their website:'):
     # Form and return prompt as a string
-    return f"{user_topic} {paragraphs}."
+    if company_name == '':
+        return f"{user_topic} '{paragraphs}' {suffix}."
+    else:
+        return f"{user_topic} '{paragraphs}' {suffix}. The name of their company is {company_name}."
 
 
 def gen_response(prompt):

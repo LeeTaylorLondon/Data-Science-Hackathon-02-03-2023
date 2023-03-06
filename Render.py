@@ -4,6 +4,17 @@ import URL_Functions
 import Analysis_LLM
 
 
+def process_text(text_):
+    # openai.error.InvalidRequestError: This model's maximum context length is 4097 tokens,
+    #  however you requested 6042 tokens (4042 in your prompt; 2000 for the completion).
+    #  Please reduce your prompt; or completion length.
+    if len(text_) > 3000:
+        text_ = text_[1000:3000]
+    else:
+        text_ = text_[:2000]
+    return text_
+
+
 def on_enter(event=None):
     # Get the values of the two text fields
     company_name = entry1.get()
@@ -16,13 +27,13 @@ def on_enter(event=None):
     soup = URL_Functions.url_to_soup_obj(urls[0])
     text = URL_Functions.extract_text(soup, headers=False)
     # Analysis - pass .html text to LLM
-    prompt_  = Analysis_LLM.create_prompt(text[1000:3000])
-    # Todo: openai.error.InvalidRequestError: This model's maximum context length is 4097 tokens,
-    #  however you requested 6042 tokens (4042 in your prompt; 2000 for the completion).
-    #  Please reduce your prompt; or completion length.
+    text = process_text(text)  # Shortens and focuses text
+    prompt_  = Analysis_LLM.create_prompt(paragraphs=text,
+                                          suffix='Also start your response with '
+                                                 'a word classifying the company.')
     response = Analysis_LLM.gen_response(prompt_)
     output   = Analysis_LLM.response_text(response)
-    print(output)
+    print(output.strip())
     # Enable the text fields
     entry1.config(state="normal")
     entry2.config(state="normal")

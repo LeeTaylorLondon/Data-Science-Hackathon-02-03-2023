@@ -32,10 +32,11 @@ Tool (Version-Alpha):
     * [X] Be able to pass URL to their company website
     * [-] Interface outputs progress text to the user
     * [-] Program searches, stores, & cleans their company website
-    * [-] Program searches, stores, & cleans the top 5 results
+    * [X] Program searches, stores, & cleans the top result
+    * [O] Program searches, stores, & cleans the top 5 results
     * [-] For each stored webpage determine whether the page is related to
           our target company (delete or ignore pages that are not related)
-    * [-] From each related and useful webpage generate a list of
+    * [X] From each related and useful webpage generate a list of
           company activities
 
 
