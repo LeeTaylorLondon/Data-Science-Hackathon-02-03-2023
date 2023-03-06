@@ -4,6 +4,21 @@ import URL_Functions
 import Analysis_LLM
 
 
+"""
+`Render.py` creates a GUI application using tkinter in python, 
+which allows the user to enter the name of a company and its 
+webpage URL. When the user presses the "Submit" button or the 
+"Return" key, the `on_enter` function is called. The function uses 
+the entered company name to perform a Google search and retrieves 
+the first URL in the results. It then uses the `url_to_soup_obj` and 
+`extract_text functions` from the URL_Functions module to retrieve the 
+HTML content of the webpage and extract the human-readable text from 
+it, respectively. This text is then passed to the `create_prompt`, 
+`gen_response`, and `response_text` functions from the Analysis_LLM 
+module to generate an output, which is then printed to the console. 
+"""
+
+
 def process_text(text_):
     # openai.error.InvalidRequestError: This model's maximum context length is 4097 tokens,
     #  however you requested 6042 tokens (4042 in your prompt; 2000 for the completion).
@@ -50,6 +65,10 @@ if __name__ == '__main__':
     root.title("Blank Window")
     root.geometry("600x400")
     root.title("CAR-01")  # CAR = Companies Activities Report
+
+    # # Create a frame for the input widgets
+    # frame = tk.Frame(root, relief=tk.SUNKEN, borderwidth=1)
+    # frame.pack(fill=tk.X, padx=10, pady=10)
 
     # Create text input for company name
     label1 = tk.Label(text='Company Name:')
