@@ -2,7 +2,11 @@
 Develop a tool to report in realtime the activities of any given company.
 
 ## How to Use
-`Render.py` creates a GUI application using tkinter in python, 
+* Execute `main.py` or `Render.py` 
+* Input a company name into the 'Company Name:' field
+
+### Explaination of `Render.py`
+* `Render.py` creates a GUI application using tkinter in python, 
 which allows the user to enter the name of a company and its 
 webpage URL. When the user presses the "Submit" button or the 
 "Return" key, the `on_enter` function is called. The function uses 
