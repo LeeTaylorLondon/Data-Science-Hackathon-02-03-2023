@@ -1,0 +1,583 @@
+﻿<!DOCTYPE html>
+<html><head>
+    	<meta charset="utf-8"/>
+	    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    	<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+	    <meta content="National Startup Registry, SchoolBusNet IKE" name="description"/>	
+		
+		<meta content="article" property="og:type"/><meta content="SchoolBusNet IKE" property="og:title"/><meta content="Develops and globally supplies Enterprise level s/w platform managing transportation operations." property="og:description"/><meta content="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/eg/share-image.jpg" property="og:image"/><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/>	    <title>National Startup Registry, SchoolBusNet IKE</title>
+
+    	<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/eg/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+
+		<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/css/bootstrap.min.css" rel="stylesheet"/>
+
+		<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/css/dataTables.bootstrap4.min.css" rel="stylesheet"/>
+		<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/css/perfect-scrollbar.css" rel="stylesheet"/>
+
+    	<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/css/style.css" rel="stylesheet"/>
+		<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/css/lite-style-1.min.css" rel="stylesheet"/>
+		<link href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet"/>
+		<script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/jquery.min.js"></script>
+		<style>
+			.pre, pre {word-wrap: break-word; white-space: pre-wrap;}
+		</style>
+		<script>
+			//handle AJAX requests
+			var tmotHnd;
+			function showLoader() {
+				$('.dt-loader-container').css("display","block");
+				$('.dt-root').css("display","none");
+				tmotHnd = setTimeout(function() {
+					alert('Looks like the request takes longer than expected. Please try to refresh the page and try again. Check also your internet connection.');
+					$('.dt-loader-container').css("display","none");
+					$('.dt-root').css("display","block");
+					clearTimeout(tmotHnd);
+				}, 
+				20000);
+			}
+			function hideLoader() {
+				$('.dt-loader-container').css("display","none");
+				$('.dt-root').css("display","block");
+				clearTimeout(tmotHnd);
+			}
+
+			$(document).ready(function() {
+				$('input[type="url"]')
+				.focusout(function() {
+					if ($(this).val() != "" && !/^((http|https):\/\/)/.test($(this).val())) {
+						$(this).val("https://" + $(this).val());
+					}
+				});
+				if ( $('inpute[type="date"]').prop('type') != 'date' ) {
+					if (/^((?!chrome|android).)*safari/i.test(navigator.userAgent)) {
+						var e = $('input[type="date"]');
+						$.each(e, (ind, elem) => {
+							var dp = {
+								dateFormat: 'yy/mm/dd',
+								changeMonth: true,
+								changeYear: true,
+								defaultDate: null
+							};
+							if (typeof elem.max !== "undefined") {
+								dp['maxdate'] = new Date(elem.max);
+							}
+							if (typeof elem.min !== "undefined") {
+								dp['mindate'] = new Date(elem.min);
+							}
+							$('#' + elem.id).datepicker(dp);
+						});
+					}
+				}
+			});
+
+			function switchRole(toRole) {
+				location.href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/functions/user/switch.php?r=" + toRole + "&nonce=71353c32e24657ad9d54103830633aef";
+			}
+		</script>
+	</head>
+	<body>
+		<!-- loader -->		
+		<div class="dt-loader-container">
+			<div class="dt-loader">				
+				<svg class="circular" viewBox="25 25 50 50">
+      				<circle class="path" cx="50" cy="50" fill="none" r="20" stroke-miterlimit="10" stroke-width="2"></circle>
+    			</svg>
+			</div>
+		</div>
+		<!-- /loader -->
+
+		<!-- Root -->
+		<div class="dt-root">
+    		<div class="dt-root-inner">
+								<!-- Header -->
+				<header class="dt-header dt-header__dark">
+					<!-- Topbar -->
+					<div class="dt-topbar">
+                		<!-- Custom Container -->
+                		<div class="dt-container">	
+                    		<!-- Topbar Inner -->
+                    		<div class="dt-topbar__inner">
+								<ul class="dt-nav-login text-uppercase">
+																			<li>
+											<a href="https://registry.elevategreece.gov.gr/login?go=https%3A%2F%2Fregistry.elevategreece.gov.gr%2Fcompany">Log In</a>
+										</li>
+										<li>
+											<a href="https://registry.elevategreece.gov.gr/signup?go=https%3A%2F%2Fregistry.elevategreece.gov.gr%2Fcompany">Sign Up</a>
+										</li>
+																	</ul>
+							</div>
+							<!-- /topbar inner -->
+                		</div>
+                		<!-- /custom container -->
+            		</div>
+					<!-- /topbar -->
+					
+					<!-- Header Top -->
+					<div class="dt-header__top">
+						<!-- Custom Container -->
+						<div class="dt-container">
+							<!-- Brand -->
+							<div class="dt-brand">
+								<!-- Brand tool -->
+								<div class="dt-brand__tool d-lg-none" data-toggle="main-sidebar">
+									<div class="hamburger-inner"></div>
+								</div>
+								<!-- /brand tool -->
+						
+								<!-- Brand logo -->
+								<span class="dt-brand__logo">
+									<a class="dt-brand__logo-link" href="https://registry.elevategreece.gov.gr">
+										<img alt="Home" class="dt-brand__logo-img d-none d-sm-inline-block" src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/eg/logo_white.png"/>
+										<img alt="Home" class="dt-brand__logo-symbol d-sm-none" src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/eg/logo_white.png"/>
+									</a>
+								</span>
+								<!-- /brand logo -->
+
+							</div>
+							<!-- /brand -->
+		
+							<!-- Header toolbar-->
+							<div class="dt-header__toolbar">
+								<!-- Navbar -->
+								<ul class="navbar-nav navbar-expand-lg dt-navbar d-none d-lg-flex">
+																</ul>
+								<!-- /navbar -->
+
+								<div class="dt-nav-wrapper">
+																	</div>
+							</div>
+							<!-- /header toolbar -->
+						</div>
+						<!-- /custom container -->
+					</div>
+					<!-- /header top -->
+				</header>
+				<!-- /header -->
+
+                <!-- Site Main -->
+                <main class="dt-main">
+					
+                    <!-- Site Content Wrapper -->
+                    <div class="dt-content-wrapper">
+                        <!-- Site Content -->
+                        <div class="dt-content">
+
+						    <!-- Grid -->
+    <div class="row">
+        <!-- Grid Item -->
+        <div class="col-xl-3 col-md-4 col-sm-5">
+            <!-- User Information -->
+            <div class="card user-bg-card" style="background-image: url('https://registry.elevategreece.gov.gr/uploads/2021/03/1615984769-V2LOGOpin640.png');">
+                <div class="user-bg-card__info p-5">
+                    <span class="dt-avatar-name mb-1 text-white">
+                        SchoolBusNet IKE                    </span>
+                    <span class="d-inline-block f-12">Athens, Greece</span>
+                </div>
+            </div>
+            <!-- /user information -->
+
+                        <br/>
+            <div class="d-none d-sm-block">
+                <p>Company Website: <a href="https://schoolbusnet.eu" target="_blank">https://schoolbusnet.eu</a></p>
+                <p>Company Email: <a href="mailto:sales@schoolbusnet.eu">sales@schoolbusnet.eu</a></p>
+                <p>Employees: 9</p>
+                <p>Funding State: Bootstrapped</p>
+            </div>
+
+            <!-- Separator -->
+            <hr class="my-6"/>
+            <!-- /separator -->
+
+            <div class="d-none d-sm-block">
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Industries</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- List -->
+                <ul class="dt-list mb-8">
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Logistics &amp; Transportation</span>
+                        </li>
+                        <!-- /list item -->
+                                    </ul>
+                <!-- /list -->
+            </div>
+
+            <!-- Separator -->
+            <hr class="my-6"/>
+            <!-- /separator -->  
+
+            <div class="d-none d-sm-block">
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Technology</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- List -->
+                <ul class="dt-list mb-8">
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Other</span>
+                        </li>
+                        <!-- /list item -->
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Software</span>
+                        </li>
+                        <!-- /list item -->
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Web or Mobile Application</span>
+                        </li>
+                        <!-- /list item -->
+                                    </ul>
+                <!-- /list -->
+            </div>
+
+            <!-- Separator -->
+            <hr class="my-6"/>
+            <!-- /separator -->  
+
+            <div class="d-none d-sm-block">
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Business Model</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- List -->
+                <ul class="dt-list mb-8">
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">B2B</span>
+                        </li>
+                        <!-- /list item -->
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">B2G</span>
+                        </li>
+                        <!-- /list item -->
+                                    </ul>
+                <!-- /list -->
+            </div>
+          
+            <!-- Separator -->
+            <hr class="my-6"/>
+            <!-- /separator -->  
+
+            <div class="d-none d-sm-block">
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Revenue Model</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- List -->
+                <ul class="dt-list mb-8">
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Price per Item</span>
+                        </li>
+                        <!-- /list item -->
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">SaaS</span>
+                        </li>
+                        <!-- /list item -->
+                                    </ul>
+                <!-- /list -->
+            </div>
+
+            <!-- Separator -->
+            <hr class="my-6"/>
+            <!-- /separator -->  
+
+            <div class="d-none d-sm-block">
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Funding Sources</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- List -->
+                <ul class="dt-list mb-8">
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Self</span>
+                        </li>
+                        <!-- /list item -->
+                                    </ul>
+                <!-- /list -->
+            </div>          
+        </div>
+        <!-- /grid item -->
+
+        <!-- Grid Item -->
+        <div class="col-xl-6 col-md-8 col-sm-7">
+            <div class="card">
+                <div class="card-body">
+                                                                        <h3>About</h3>
+                            <p class="pre">   We are an innovative software company that develops solutions to everyday problems. Our unique platforms provide all the tools necessary to properly manage every student transportation processes: Planning routes, allocation of resources, route optimization, passenger scheduling and tracking, simple and complete communication links, Parent’s direct involvement, comprehensive reporting including costs and charges of every element, invoices reconciliation, and the real-time management of all operations of the transport service.</p>
+                                                <br/>
+                                                                        <h3>Solution &amp; Product</h3>
+                            <p class="pre">Our platform includes everything around Managing Transportation Operations and more specifically Student (and employee) transportation.
+Integrated to the Console that monitors every detail in real-time, there are mobile applications for connecting all stakeholders, with their own specific needs and privileges. The result is an all-informed, totally transparent, fully detailed, and mostly automatic management of Operations.
+Next to it, partly stand-alone, there is Route PLanner our second platform, that either designs the optimum schedule of any size of operations, or offers functionality integrated into SchoolBusNet platform. 
+Along with our vast experience in the field, we are in a position to consult any size of operations, not only by providing solutions and process improvements, but also integrate any 3rd party systems and hardware, along with our own custom-designed control systems.</p>
+                                                <br/>
+                                                                        <h3>Innovation &amp; Scalability</h3>
+                            <p class="pre">Scalability is our Innovation. While there are few solutions in the field, none has ever approached these operations at a large scale. 
+Every module, functionality, policy, cost or contractor's element, access to, report, staff or infrastructure can be grouped to any organization scheme. A multi-level, drag-n-drop, any combination of info Domain Structure is a prerequisite if one needs to Design, Monitor and Measure large-scale operations. </p>
+                                                <br/>
+                                                                        <h3>Traction &amp; achievements</h3>
+                            <p class="pre">Started with schools, then moved to large organizations (school alliances) and ministries handling the whole country's operations. 
+Hassle free,  large deployment projects of hundreds of thousands of passengers, hundreds of subcontractors, tens of thousands of vehicles and employees,  delivered in absolute success.</p>
+                                                <br/>
+                                                                        <h3>Team &amp; Why Us</h3>
+                            <p class="pre">A businessman having experience of over 25 years in Telecom, an authentic, hands-on, all-around software architect, a Dr. in databases, and a successful team of innovative developers, has produced, implemented and support at a world-class level SBN platform to large organizations and ministries.  The collective experience in Student Transportation Management is considered unparalleled. </p>
+                                                <br/>
+                                                                        <h3>Funding Needs</h3>
+                            <p class="pre">We have already achieved a revenue stream that covers current needs on further investing in our product. </p>
+                                                <br/>
+                                    </div>
+            </div>
+        </div>
+        <!-- /grid item -->
+
+        <!-- Grid Item -->
+        <div class="col-xl-3 col-md-4 col-sm-5">
+            <!-- Card -->
+            <div class="dt-card bg-transparent shadow-none">
+                <div class="d-none d-sm-block">
+                    <!-- Entry Header -->
+                    <div class="dt-entry__header mb-5">
+                        ONE LINER                    </div>
+            
+                    <div>
+                        <p>Develops and globally supplies Enterprise level s/w platform managing transportation operations.</p>
+                    </div>
+                </div>
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">TEAM</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+
+
+
+
+
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">FUNDING</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">PATENTS</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">AWARDS</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">INCUBATIONS/ACCELERATIONS</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Jobs</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Perks</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+            </div>
+            <!-- /card -->
+        </div>
+        <!-- /grid item -->
+    </div>
+    <!-- /grid -->
+                                <!-- DpG/Mat25:35 -->
+                            </div>
+                            <!-- /site content -->
+
+                        </div>
+                        <!-- /site content wrapper -->
+                </main>
+                <!-- /main -->
+
+                <!-- Footer -->
+                <footer class="dt-footer">
+                    <div class="dt-container">
+                        <center>
+                            <div class="row" style="max-width:930px;">
+                                <div class="col">
+                                    <small>Provided By</small><br/>
+                                                                            <a href="https://www.elevategreece.gov.gr" target="_blank">
+                                            <img src="https://registry.elevategreece.gov.gr/uploads/2020/04/1586759140-logo_640.png" style="height:60px;"/>
+                                        </a>
+                                                                    </div>
+                                                                    <div class="col">
+                                    <small>Supported By</small><br/>
+                                        <img src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/eg/supporters.svg" style="height:60px;"/>
+                                    </div>
+                                                                <div class="col">
+                                    <small>Powered By</small><br/>
+                                    <a href="https://www.mantisbi.io" target="_blank">
+                                        <img src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/logo_mantis.png" style="height:60px;"/>
+                                    </a>
+                                </div>
+                            </div>
+                            <span style="height:7px !important;"> </span>
+                            <p>© 2023, All rigths reserved - Licensed to <b>National Startup Registry</b>, a <a href="https://www.mantisbi.io" target="_blank">Mantis Innovation Management System</a> installation.</p>
+                        </center>
+                    </div>
+                </footer>
+                <!-- /footer -->
+
+    	    </div>
+        </div>
+        <!-- /root -->
+        
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/moment.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/bootstrap.bundle.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/perfect-scrollbar.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/masonry.pkgd.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/sweetalert2.all.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/Chart.bundle.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/jquery.dataTables.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/dataTables.bootstrap4.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/script.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-164790695-1"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);} gtag("js", new Date()); gtag("config", "UA-164790695-1");</script>    
+
+</body></html>

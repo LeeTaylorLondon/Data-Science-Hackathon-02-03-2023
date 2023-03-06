@@ -1,0 +1,672 @@
+﻿<!DOCTYPE html>
+<html><head>
+    	<meta charset="utf-8"/>
+	    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    	<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+	    <meta content="National Startup Registry, BE A GREEK IKE" name="description"/>	
+		
+		<meta content="article" property="og:type"/><meta content="BE A GREEK IKE" property="og:title"/><meta content="We design and deliver private, bespoke tailored Trips, themed Tours &amp; Activities" property="og:description"/><meta content="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/eg/share-image.jpg" property="og:image"/><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/>	    <title>National Startup Registry, BE A GREEK IKE</title>
+
+    	<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/eg/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+
+		<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/css/bootstrap.min.css" rel="stylesheet"/>
+
+		<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/css/dataTables.bootstrap4.min.css" rel="stylesheet"/>
+		<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/css/perfect-scrollbar.css" rel="stylesheet"/>
+
+    	<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/css/style.css" rel="stylesheet"/>
+		<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/css/lite-style-1.min.css" rel="stylesheet"/>
+		<link href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet"/>
+		<script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/jquery.min.js"></script>
+		<style>
+			.pre, pre {word-wrap: break-word; white-space: pre-wrap;}
+		</style>
+		<script>
+			//handle AJAX requests
+			var tmotHnd;
+			function showLoader() {
+				$('.dt-loader-container').css("display","block");
+				$('.dt-root').css("display","none");
+				tmotHnd = setTimeout(function() {
+					alert('Looks like the request takes longer than expected. Please try to refresh the page and try again. Check also your internet connection.');
+					$('.dt-loader-container').css("display","none");
+					$('.dt-root').css("display","block");
+					clearTimeout(tmotHnd);
+				}, 
+				20000);
+			}
+			function hideLoader() {
+				$('.dt-loader-container').css("display","none");
+				$('.dt-root').css("display","block");
+				clearTimeout(tmotHnd);
+			}
+
+			$(document).ready(function() {
+				$('input[type="url"]')
+				.focusout(function() {
+					if ($(this).val() != "" && !/^((http|https):\/\/)/.test($(this).val())) {
+						$(this).val("https://" + $(this).val());
+					}
+				});
+				if ( $('inpute[type="date"]').prop('type') != 'date' ) {
+					if (/^((?!chrome|android).)*safari/i.test(navigator.userAgent)) {
+						var e = $('input[type="date"]');
+						$.each(e, (ind, elem) => {
+							var dp = {
+								dateFormat: 'yy/mm/dd',
+								changeMonth: true,
+								changeYear: true,
+								defaultDate: null
+							};
+							if (typeof elem.max !== "undefined") {
+								dp['maxdate'] = new Date(elem.max);
+							}
+							if (typeof elem.min !== "undefined") {
+								dp['mindate'] = new Date(elem.min);
+							}
+							$('#' + elem.id).datepicker(dp);
+						});
+					}
+				}
+			});
+
+			function switchRole(toRole) {
+				location.href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/functions/user/switch.php?r=" + toRole + "&nonce=6ad6e5877dd11a26be0a605f25e2d5bf";
+			}
+		</script>
+	</head>
+	<body>
+		<!-- loader -->		
+		<div class="dt-loader-container">
+			<div class="dt-loader">				
+				<svg class="circular" viewBox="25 25 50 50">
+      				<circle class="path" cx="50" cy="50" fill="none" r="20" stroke-miterlimit="10" stroke-width="2"></circle>
+    			</svg>
+			</div>
+		</div>
+		<!-- /loader -->
+
+		<!-- Root -->
+		<div class="dt-root">
+    		<div class="dt-root-inner">
+								<!-- Header -->
+				<header class="dt-header dt-header__dark">
+					<!-- Topbar -->
+					<div class="dt-topbar">
+                		<!-- Custom Container -->
+                		<div class="dt-container">	
+                    		<!-- Topbar Inner -->
+                    		<div class="dt-topbar__inner">
+								<ul class="dt-nav-login text-uppercase">
+																			<li>
+											<a href="https://registry.elevategreece.gov.gr/login?go=https%3A%2F%2Fregistry.elevategreece.gov.gr%2Fcompany">Log In</a>
+										</li>
+										<li>
+											<a href="https://registry.elevategreece.gov.gr/signup?go=https%3A%2F%2Fregistry.elevategreece.gov.gr%2Fcompany">Sign Up</a>
+										</li>
+																	</ul>
+							</div>
+							<!-- /topbar inner -->
+                		</div>
+                		<!-- /custom container -->
+            		</div>
+					<!-- /topbar -->
+					
+					<!-- Header Top -->
+					<div class="dt-header__top">
+						<!-- Custom Container -->
+						<div class="dt-container">
+							<!-- Brand -->
+							<div class="dt-brand">
+								<!-- Brand tool -->
+								<div class="dt-brand__tool d-lg-none" data-toggle="main-sidebar">
+									<div class="hamburger-inner"></div>
+								</div>
+								<!-- /brand tool -->
+						
+								<!-- Brand logo -->
+								<span class="dt-brand__logo">
+									<a class="dt-brand__logo-link" href="https://registry.elevategreece.gov.gr">
+										<img alt="Home" class="dt-brand__logo-img d-none d-sm-inline-block" src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/eg/logo_white.png"/>
+										<img alt="Home" class="dt-brand__logo-symbol d-sm-none" src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/eg/logo_white.png"/>
+									</a>
+								</span>
+								<!-- /brand logo -->
+
+							</div>
+							<!-- /brand -->
+		
+							<!-- Header toolbar-->
+							<div class="dt-header__toolbar">
+								<!-- Navbar -->
+								<ul class="navbar-nav navbar-expand-lg dt-navbar d-none d-lg-flex">
+																</ul>
+								<!-- /navbar -->
+
+								<div class="dt-nav-wrapper">
+																	</div>
+							</div>
+							<!-- /header toolbar -->
+						</div>
+						<!-- /custom container -->
+					</div>
+					<!-- /header top -->
+				</header>
+				<!-- /header -->
+
+                <!-- Site Main -->
+                <main class="dt-main">
+					
+                    <!-- Site Content Wrapper -->
+                    <div class="dt-content-wrapper">
+                        <!-- Site Content -->
+                        <div class="dt-content">
+
+						    <!-- Grid -->
+    <div class="row">
+        <!-- Grid Item -->
+        <div class="col-xl-3 col-md-4 col-sm-5">
+            <!-- User Information -->
+            <div class="card user-bg-card" style="background-image: url('https://registry.elevategreece.gov.gr/uploads/2021/08/1629794987-Be a Greek Logo.jpg');">
+                <div class="user-bg-card__info p-5">
+                    <span class="dt-avatar-name mb-1 text-white">
+                        BE A GREEK IKE                    </span>
+                    <span class="d-inline-block f-12">Athens, Greece</span>
+                </div>
+            </div>
+            <!-- /user information -->
+
+                        <br/>
+            <div class="d-none d-sm-block">
+                <p>Company Website: <a href="https://www.beagreek.com/" target="_blank">https://www.beagreek.com/</a></p>
+                <p>Company Email: <a href="mailto:info@beagreek.com">info@beagreek.com</a></p>
+                <p>Employees: 9</p>
+                <p>Funding State: Bootstrapped</p>
+            </div>
+
+            <!-- Separator -->
+            <hr class="my-6"/>
+            <!-- /separator -->
+
+            <div class="d-none d-sm-block">
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Industries</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- List -->
+                <ul class="dt-list mb-8">
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Travel / Hospitality / Leisure</span>
+                        </li>
+                        <!-- /list item -->
+                                    </ul>
+                <!-- /list -->
+            </div>
+
+            <!-- Separator -->
+            <hr class="my-6"/>
+            <!-- /separator -->  
+
+            <div class="d-none d-sm-block">
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Technology</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- List -->
+                <ul class="dt-list mb-8">
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Other</span>
+                        </li>
+                        <!-- /list item -->
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Web or Mobile Application</span>
+                        </li>
+                        <!-- /list item -->
+                                    </ul>
+                <!-- /list -->
+            </div>
+
+            <!-- Separator -->
+            <hr class="my-6"/>
+            <!-- /separator -->  
+
+            <div class="d-none d-sm-block">
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Business Model</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- List -->
+                <ul class="dt-list mb-8">
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">B2B</span>
+                        </li>
+                        <!-- /list item -->
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">B2B2C</span>
+                        </li>
+                        <!-- /list item -->
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">B2C</span>
+                        </li>
+                        <!-- /list item -->
+                                    </ul>
+                <!-- /list -->
+            </div>
+          
+            <!-- Separator -->
+            <hr class="my-6"/>
+            <!-- /separator -->  
+
+            <div class="d-none d-sm-block">
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Revenue Model</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- List -->
+                <ul class="dt-list mb-8">
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Price per Item</span>
+                        </li>
+                        <!-- /list item -->
+                                    </ul>
+                <!-- /list -->
+            </div>
+
+            <!-- Separator -->
+            <hr class="my-6"/>
+            <!-- /separator -->  
+
+            <div class="d-none d-sm-block">
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Funding Sources</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- List -->
+                <ul class="dt-list mb-8">
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Self</span>
+                        </li>
+                        <!-- /list item -->
+                                    </ul>
+                <!-- /list -->
+            </div>          
+        </div>
+        <!-- /grid item -->
+
+        <!-- Grid Item -->
+        <div class="col-xl-6 col-md-8 col-sm-7">
+            <div class="card">
+                <div class="card-body">
+                                                                        <h3>About</h3>
+                            <p class="pre">We design and deliver private, bespoke tailored Trips, themed Tours &amp; Activities</p>
+                                                <br/>
+                                                                        <h3>Solution &amp; Product</h3>
+                            <p class="pre">We focus on Thematic Tourism &amp; Tailor made Vacations in Greece. Having in mind the 3 pillars of our Mission (Bespoke Experiences, Breathtaking places, Authentic People) we create tailored Tours &amp; Multi day Trips for our Travelers.
+
+OUR SERVICES:
+Themed Activities &amp; Tours
+Archaeology, Food &amp; Wine, Art, History, children-oriented activities are some of the themes of our private experiences.
+
+Personalized Itineraries
+Whether our Travelers visit us for a half-day Tour or a Multiday Trip we design from scratch a personalized itinerary customized to their specific needs and wishes. 
+
+Some of our solutions include:
+Private services, authentic experiences with local guides, less populated destinations, collaboration with smaller &amp; local operators with sustainability accreditations, focusing on fewer, higher value travelers, utilizing our team’s background in medicine &amp; screening operators to the highest standards, connecting with locals, contributing to local economies</p>
+                                                <br/>
+                                                                        <h3>Innovation &amp; Scalability</h3>
+                            <p class="pre">At Be A Greek we believe that innovation in the industry looks like:
+Personalization
+Total personalization is hard to deliver, so we have geared our entire model towards focusing solely on this, making it difficult for competitors to fully replicate.
+
+Flexibility
+Our small size, good understanding of the evolving and fast moving trends in travel post-covid &amp; our personalized approach, means that we are not reliant on repeat booking discounts from the same tour or provider and can be more agile than most operators.
+ 
+Exclusivity
+Developing exclusive relationships with luxury travel operators specializing in personalization in markets outside of Greece.
+
+Brand Expansion
+Building a brand and a unique license model that can be replicated and scaled beyond Greece
+
+
+
+</p>
+                                                <br/>
+                                                                        <h3>Traction &amp; achievements</h3>
+                            <p class="pre">In our first 3 financial years we have demonstrated significant growth potential. 
+We increased our revenues from 10K € in 2017, to 140K € in 2019, (1300% increase in 3 years) with profitability from year 2. 
+
+We also achieved siginificant growth in our Distribution Channel Contracts, most of which are worldwide Leaders in their sector:
+2016 (New 1, Active 1), 2017 (New 3, Active 4), 2018 (New 2, Active 6), 2019 (New 1, Active 7), 2020 (New 3, Active 10)
+
+Regarding our Team's growth:
+2018 3 Founders
+2019 + 2 Full Time Employees
+2020 4 Full Time Employees
+
+Suppliers - Trusted Network of 200+ suppliers &amp; collaborators all over Greece
+
+Members of
+SETE, HATTA, ASTA, ACVB, Greek-Italian Chamber of Commerce
+
+Participating in 2021 Mastercard's Promo Campaign in collaboration with EOT as the only company all over Greece in our field of expertise </p>
+                                                <br/>
+                                                                        <h3>Team &amp; Why Us</h3>
+                            <p class="pre">Since 2016 we have created a really strong Team consisting of experts in a variety of fields such as tourism, marketing, IT &amp; sociology.
+
+Our Founders 
+CEO Antonis Chatzis
+Degree in Mathematics (Athens Uni)  
+MBA degree 
+Speaks 3 languages.
+TEDx Speaker
+Deals with high-level strategic decisions &amp; keeps a hands-on approach with day-to-day functions
+
+co-Founder &amp; Sales Director Dimitris Moutafidis
+Medical Doctor (Bologna Uni)
+Soon to get his PhD Degree
+Speaks 4 languages. 
+Manages Sales &amp; customer care
+Lead Designer of services
+
+Our Advisors
+Strategic Advisor Gayle Mann
+Degree in Marketing and Entrepreneurship 
+PgDip in Strategic Marketing 
+21 years working exp with start-up, growth&amp;scale business
+6 years exp as a Director&amp;COO of Entrepreneurial Spark - the World’s Largest Entrepreneurial Accelerator. 
+
+Strategic Advisor Theofilos Kyratsoulis
+Policy Advisor to SETE
+GM at MINDHAUS
+15+ years of experience in Tourism Industry
+Strategic Marketing expert</p>
+                                                <br/>
+                                                                        <h3>Funding Needs</h3>
+                            <p class="pre">We are currently not actively looking for funding. We are however always open to speak to interested investors both financial and strategic in order to explore common opportunities.</p>
+                                                <br/>
+                                    </div>
+            </div>
+        </div>
+        <!-- /grid item -->
+
+        <!-- Grid Item -->
+        <div class="col-xl-3 col-md-4 col-sm-5">
+            <!-- Card -->
+            <div class="dt-card bg-transparent shadow-none">
+                <div class="d-none d-sm-block">
+                    <!-- Entry Header -->
+                    <div class="dt-entry__header mb-5">
+                        ONE LINER                    </div>
+            
+                    <div>
+                        <p>We design and deliver private, bespoke tailored Trips, themed Tours &amp; Activities</p>
+                    </div>
+                </div>
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">TEAM</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                                                    <!-- Widget Item -->
+                        <div class="dt-widget__item px-0">
+                            <!-- Widget Image -->
+                            <div class="dt-widget__img">
+                                <!-- Avatar -->
+                                <img alt="Antonis Chatzis" class="dt-avatar size-35 rounded" src="https://registry.elevategreece.gov.gr/uploads/2021/08/1572102981723.jfif"/>
+                                <!-- /avatar -->
+                            </div>
+                            <!-- /widget image -->
+                            <!-- Widget Info -->
+                            <div class="dt-widget__info">
+                                Antonis Chatzis, CoFounder                            </div>
+                            <!-- /widget info -->
+                        </div>
+                        <!-- /widgets item -->
+                                                                    <!-- Widget Item -->
+                        <div class="dt-widget__item px-0">
+                            <!-- Widget Image -->
+                            <div class="dt-widget__img">
+                                <!-- Avatar -->
+                                <img alt="Dimitris Moutafidis" class="dt-avatar size-35 rounded" src="https://registry.elevategreece.gov.gr/uploads/2021/08/1520406496098.jfif"/>
+                                <!-- /avatar -->
+                            </div>
+                            <!-- /widget image -->
+                            <!-- Widget Info -->
+                            <div class="dt-widget__info">
+                                Dimitris Moutafidis, CoFounder                            </div>
+                            <!-- /widget info -->
+                        </div>
+                        <!-- /widgets item -->
+                                    </div>
+                <!-- /widget -->
+
+
+
+
+
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">FUNDING</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">PATENTS</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">AWARDS</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">INCUBATIONS/ACCELERATIONS</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Jobs</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Perks</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+            </div>
+            <!-- /card -->
+        </div>
+        <!-- /grid item -->
+    </div>
+    <!-- /grid -->
+                                <!-- DpG/Mat25:35 -->
+                            </div>
+                            <!-- /site content -->
+
+                        </div>
+                        <!-- /site content wrapper -->
+                </main>
+                <!-- /main -->
+
+                <!-- Footer -->
+                <footer class="dt-footer">
+                    <div class="dt-container">
+                        <center>
+                            <div class="row" style="max-width:930px;">
+                                <div class="col">
+                                    <small>Provided By</small><br/>
+                                                                            <a href="https://www.elevategreece.gov.gr" target="_blank">
+                                            <img src="https://registry.elevategreece.gov.gr/uploads/2020/04/1586759140-logo_640.png" style="height:60px;"/>
+                                        </a>
+                                                                    </div>
+                                                                    <div class="col">
+                                    <small>Supported By</small><br/>
+                                        <img src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/eg/supporters.svg" style="height:60px;"/>
+                                    </div>
+                                                                <div class="col">
+                                    <small>Powered By</small><br/>
+                                    <a href="https://www.mantisbi.io" target="_blank">
+                                        <img src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/logo_mantis.png" style="height:60px;"/>
+                                    </a>
+                                </div>
+                            </div>
+                            <span style="height:7px !important;"> </span>
+                            <p>© 2023, All rigths reserved - Licensed to <b>National Startup Registry</b>, a <a href="https://www.mantisbi.io" target="_blank">Mantis Innovation Management System</a> installation.</p>
+                        </center>
+                    </div>
+                </footer>
+                <!-- /footer -->
+
+    	    </div>
+        </div>
+        <!-- /root -->
+        
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/moment.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/bootstrap.bundle.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/perfect-scrollbar.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/masonry.pkgd.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/sweetalert2.all.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/Chart.bundle.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/jquery.dataTables.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/dataTables.bootstrap4.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/script.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-164790695-1"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);} gtag("js", new Date()); gtag("config", "UA-164790695-1");</script>    
+
+</body></html>

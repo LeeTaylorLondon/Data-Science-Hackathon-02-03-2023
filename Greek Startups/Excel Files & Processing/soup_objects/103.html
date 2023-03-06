@@ -1,0 +1,611 @@
+﻿<!DOCTYPE html>
+<html><head>
+    	<meta charset="utf-8"/>
+	    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    	<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+	    <meta content="National Startup Registry, DEEPLAB IKE" name="description"/>	
+		
+		<meta content="article" property="og:type"/><meta content="DEEPLAB IKE" property="og:title"/><meta content="Ultra-fast deep learning virtual screening &gt;1B compounds for drug discovery with minimal resources" property="og:description"/><meta content="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/eg/share-image.jpg" property="og:image"/><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/>	    <title>National Startup Registry, DEEPLAB IKE</title>
+
+    	<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/eg/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+
+		<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/css/bootstrap.min.css" rel="stylesheet"/>
+
+		<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/css/dataTables.bootstrap4.min.css" rel="stylesheet"/>
+		<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/css/perfect-scrollbar.css" rel="stylesheet"/>
+
+    	<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/css/style.css" rel="stylesheet"/>
+		<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/css/lite-style-1.min.css" rel="stylesheet"/>
+		<link href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet"/>
+		<script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/jquery.min.js"></script>
+		<style>
+			.pre, pre {word-wrap: break-word; white-space: pre-wrap;}
+		</style>
+		<script>
+			//handle AJAX requests
+			var tmotHnd;
+			function showLoader() {
+				$('.dt-loader-container').css("display","block");
+				$('.dt-root').css("display","none");
+				tmotHnd = setTimeout(function() {
+					alert('Looks like the request takes longer than expected. Please try to refresh the page and try again. Check also your internet connection.');
+					$('.dt-loader-container').css("display","none");
+					$('.dt-root').css("display","block");
+					clearTimeout(tmotHnd);
+				}, 
+				20000);
+			}
+			function hideLoader() {
+				$('.dt-loader-container').css("display","none");
+				$('.dt-root').css("display","block");
+				clearTimeout(tmotHnd);
+			}
+
+			$(document).ready(function() {
+				$('input[type="url"]')
+				.focusout(function() {
+					if ($(this).val() != "" && !/^((http|https):\/\/)/.test($(this).val())) {
+						$(this).val("https://" + $(this).val());
+					}
+				});
+				if ( $('inpute[type="date"]').prop('type') != 'date' ) {
+					if (/^((?!chrome|android).)*safari/i.test(navigator.userAgent)) {
+						var e = $('input[type="date"]');
+						$.each(e, (ind, elem) => {
+							var dp = {
+								dateFormat: 'yy/mm/dd',
+								changeMonth: true,
+								changeYear: true,
+								defaultDate: null
+							};
+							if (typeof elem.max !== "undefined") {
+								dp['maxdate'] = new Date(elem.max);
+							}
+							if (typeof elem.min !== "undefined") {
+								dp['mindate'] = new Date(elem.min);
+							}
+							$('#' + elem.id).datepicker(dp);
+						});
+					}
+				}
+			});
+
+			function switchRole(toRole) {
+				location.href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/functions/user/switch.php?r=" + toRole + "&nonce=4bb7d13281028f15ba9586c7c30d4d03";
+			}
+		</script>
+	</head>
+	<body>
+		<!-- loader -->		
+		<div class="dt-loader-container">
+			<div class="dt-loader">				
+				<svg class="circular" viewBox="25 25 50 50">
+      				<circle class="path" cx="50" cy="50" fill="none" r="20" stroke-miterlimit="10" stroke-width="2"></circle>
+    			</svg>
+			</div>
+		</div>
+		<!-- /loader -->
+
+		<!-- Root -->
+		<div class="dt-root">
+    		<div class="dt-root-inner">
+								<!-- Header -->
+				<header class="dt-header dt-header__dark">
+					<!-- Topbar -->
+					<div class="dt-topbar">
+                		<!-- Custom Container -->
+                		<div class="dt-container">	
+                    		<!-- Topbar Inner -->
+                    		<div class="dt-topbar__inner">
+								<ul class="dt-nav-login text-uppercase">
+																			<li>
+											<a href="https://registry.elevategreece.gov.gr/login?go=https%3A%2F%2Fregistry.elevategreece.gov.gr%2Fcompany">Log In</a>
+										</li>
+										<li>
+											<a href="https://registry.elevategreece.gov.gr/signup?go=https%3A%2F%2Fregistry.elevategreece.gov.gr%2Fcompany">Sign Up</a>
+										</li>
+																	</ul>
+							</div>
+							<!-- /topbar inner -->
+                		</div>
+                		<!-- /custom container -->
+            		</div>
+					<!-- /topbar -->
+					
+					<!-- Header Top -->
+					<div class="dt-header__top">
+						<!-- Custom Container -->
+						<div class="dt-container">
+							<!-- Brand -->
+							<div class="dt-brand">
+								<!-- Brand tool -->
+								<div class="dt-brand__tool d-lg-none" data-toggle="main-sidebar">
+									<div class="hamburger-inner"></div>
+								</div>
+								<!-- /brand tool -->
+						
+								<!-- Brand logo -->
+								<span class="dt-brand__logo">
+									<a class="dt-brand__logo-link" href="https://registry.elevategreece.gov.gr">
+										<img alt="Home" class="dt-brand__logo-img d-none d-sm-inline-block" src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/eg/logo_white.png"/>
+										<img alt="Home" class="dt-brand__logo-symbol d-sm-none" src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/eg/logo_white.png"/>
+									</a>
+								</span>
+								<!-- /brand logo -->
+
+							</div>
+							<!-- /brand -->
+		
+							<!-- Header toolbar-->
+							<div class="dt-header__toolbar">
+								<!-- Navbar -->
+								<ul class="navbar-nav navbar-expand-lg dt-navbar d-none d-lg-flex">
+																</ul>
+								<!-- /navbar -->
+
+								<div class="dt-nav-wrapper">
+																	</div>
+							</div>
+							<!-- /header toolbar -->
+						</div>
+						<!-- /custom container -->
+					</div>
+					<!-- /header top -->
+				</header>
+				<!-- /header -->
+
+                <!-- Site Main -->
+                <main class="dt-main">
+					
+                    <!-- Site Content Wrapper -->
+                    <div class="dt-content-wrapper">
+                        <!-- Site Content -->
+                        <div class="dt-content">
+
+						    <!-- Grid -->
+    <div class="row">
+        <!-- Grid Item -->
+        <div class="col-xl-3 col-md-4 col-sm-5">
+            <!-- User Information -->
+            <div class="card user-bg-card" style="background-image: url('https://registry.elevategreece.gov.gr/uploads/2021/11/1636116874-Deeplab LOGO-hires-01-3.jpg');">
+                <div class="user-bg-card__info p-5">
+                    <span class="dt-avatar-name mb-1 text-white">
+                        DEEPLAB IKE                    </span>
+                    <span class="d-inline-block f-12">Athens, Greece</span>
+                </div>
+            </div>
+            <!-- /user information -->
+
+                        <br/>
+            <div class="d-none d-sm-block">
+                <p>Company Website: <a href="https://deeplab.ai/" target="_blank">https://deeplab.ai/</a></p>
+                <p>Company Email: <a href="mailto:afroditi@deeplab.ai">afroditi@deeplab.ai</a></p>
+                <p>Employees: 13</p>
+                <p>Funding State: Bootstrapped</p>
+            </div>
+
+            <!-- Separator -->
+            <hr class="my-6"/>
+            <!-- /separator -->
+
+            <div class="d-none d-sm-block">
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Industries</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- List -->
+                <ul class="dt-list mb-8">
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Advertising &amp; Marketing (AdTech)</span>
+                        </li>
+                        <!-- /list item -->
+                                    </ul>
+                <!-- /list -->
+            </div>
+
+            <!-- Separator -->
+            <hr class="my-6"/>
+            <!-- /separator -->  
+
+            <div class="d-none d-sm-block">
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Technology</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- List -->
+                <ul class="dt-list mb-8">
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">AI</span>
+                        </li>
+                        <!-- /list item -->
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">AR/VR</span>
+                        </li>
+                        <!-- /list item -->
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Data Analytics - Big Data</span>
+                        </li>
+                        <!-- /list item -->
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Software</span>
+                        </li>
+                        <!-- /list item -->
+                                    </ul>
+                <!-- /list -->
+            </div>
+
+            <!-- Separator -->
+            <hr class="my-6"/>
+            <!-- /separator -->  
+
+            <div class="d-none d-sm-block">
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Business Model</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- List -->
+                <ul class="dt-list mb-8">
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">B2B</span>
+                        </li>
+                        <!-- /list item -->
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">B2B2C</span>
+                        </li>
+                        <!-- /list item -->
+                                    </ul>
+                <!-- /list -->
+            </div>
+          
+            <!-- Separator -->
+            <hr class="my-6"/>
+            <!-- /separator -->  
+
+            <div class="d-none d-sm-block">
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Revenue Model</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- List -->
+                <ul class="dt-list mb-8">
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Other</span>
+                        </li>
+                        <!-- /list item -->
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">SaaS</span>
+                        </li>
+                        <!-- /list item -->
+                                    </ul>
+                <!-- /list -->
+            </div>
+
+            <!-- Separator -->
+            <hr class="my-6"/>
+            <!-- /separator -->  
+
+            <div class="d-none d-sm-block">
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Funding Sources</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- List -->
+                <ul class="dt-list mb-8">
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Self</span>
+                        </li>
+                        <!-- /list item -->
+                                    </ul>
+                <!-- /list -->
+            </div>          
+        </div>
+        <!-- /grid item -->
+
+        <!-- Grid Item -->
+        <div class="col-xl-6 col-md-8 col-sm-7">
+            <div class="card">
+                <div class="card-body">
+                                                                        <h3>About</h3>
+                            <p class="pre">Deeplab (deeplab.ai) bridges the gap between state-of-the-art research and challenging industrial problems. Counts more than 18 researchers/engineers working in real-life projects while conducting high-end deep-learning research in large-scale product-level pipelines dealing with &gt;1B data per day. Deeplab has successfully applied deep-learning in diverse and long term projects: 1) recommendation systems, including multiple modalities such as image, text, and other inputs 2) anomaly detection in fraud detection, 3) visual objects’ relations recognition and explainable AI/ML, as well as with 4) bioinformatics fields such as virtual screening for drug discovery, single cell multi-omics, cancer research all related to the state- of-the-art of deep learning. Recent success highlights include a self-funded project on COVID-19 drug discovery while being in the top-20 teams in the international JEDI grand challenge whose submissions are currently tested in vivo.
+</p>
+                                                <br/>
+                                                                        <h3>Solution &amp; Product</h3>
+                            <p class="pre">Our focus is on structure-based virtual screening (SBVS), a process by which target-compound interactions are exploited with the aim of building models that can generalise to novel targets and compounds. Traditional approaches for SBVS employ physics-based molecular docking simulations, and are usually extremely slow and can therefore severely hinder the virtual screening throughput.
+
+In Deeplab, we have developed DeNViS, an AI-based virtual screening system using geometric deep learning, a sub-field of ML which is very powerful for processing graph data, i.e. proteins and chemical compounds. By leveraging the power of AI and avoiding physics-based simulations, we achieve state-of-the-art virtual screening performance with several orders of magnitude faster screening times, namely 10^4 times faster. This feature renders our approach suitable for virtually screening of vast compound databases, scaling up to billions of molecules per day. </p>
+                                                <br/>
+                                                                        <h3>Innovation &amp; Scalability</h3>
+                            <p class="pre">DeepLab strives to address one of the world’s most complex problems: drug discovery. The technologies employed lie within subfields within AI, computational biology and biotechnology. We employ ML-related approaches involving geometric-DL and recent DL advances. By leveraging the power of AI we achieve state-of-the-art virtual screening performance with several orders of magnitude faster screening times, namely 10^4 times faster. This feature renders our approach suitable for scaling up to billions of molecules per day.Our algorithm is AI-based virtual screening system using geometric deep learning, a sub-field of ML which is very powerful for processing graph data, i.e. proteins and chemical compounds. Our business model is B2B based on custom drug discovery services on a project basis, tailoring our algorithmic product to the existing needs of our client. Our unique proposition is a VSaaS – Virtual Screening as a Service product.  DeNViS can be used both as a tailor-made and also an “off the shelf” solution to run virtual screening when given specific drug targets and data libraries (either from client or acquired). We have the ability, agility and flexibility to sell our key differentiator: client-based high-performing/throughput solution based on innovative approaches. Our competitors sell just standalone products but we provide a service for faster virtual screening, suitable for massive databases with minimal requirements.</p>
+                                                <br/>
+                                                                        <h3>Traction &amp; achievements</h3>
+                            <p class="pre">In JEDI Grand Challenge we virtually screened 1 Billion molecules against 3 proteins of Sars-Cov2. Currently our submission is evaluated in the wet-lab together with the top-20, out of ~138 teams.</p>
+                                                <br/>
+                                                                        <h3>Team &amp; Why Us</h3>
+                            <p class="pre">Having a solid academic/research background (&gt;15 years) in signal processing and machine  learning, and a deep industrial experience during the recent 4 years, we are motivated enough to develop as well as to support actions and cultivate synergies with distinguished experts. Our team consists of:
+- Stavros Theodorakis: Founder, CEO
+- Vassilis Pitsikalis: Founder, CSO
+- Agamemnon Krassoulis: Senior Machine Learning Engineer
+- Stefanos Angelidis: Senior Machine Learning Engineer
+- Prodromos Kolyvakis: Senior Machine Learning Engineer
+- Thanos Tagaris: Senior Machine Learning Engineer
+- Petros Katsileros: Machine Learning Engineer
+- Alexandros Georgogiannis: Machine Learning Engineer
+- Nikos Antonopoulos: Machine Learning Engineer 
+- Markos Diomataris- Machine Learning Engineer
+- Manos Zaranis: Machine Learning Engineer
+- Mary Parelli: Machine Learning Engineer
+- Afroditi Kravari: HR &amp; Office Administrator 
+- Stefanos Leptidis, Bioinformatician/ Bioinformatics lead, big-data application development
+- Alexandros Pittis: Bioinformatician 
+</p>
+                                                <br/>
+                                                                        <h3>Funding Needs</h3>
+                            <p class="pre">To achieve our short to medium term goals, we are seeking seed funding to support our growth and goals regarding access to appropriate data, marketing, business development, development and hiring of experienced personnel. Specifically: 
+- Team: Extend hiring of core team with executives, business, bioinformatics experts 
+- Service: Develop/deliver product v2.0 to address issues/challenges far beyond the state-of-the-art extending v1.0 and advancing by a lot our competitive advantage 
+-  Pilot tests, collect feedback 
+- Partner/Data: Partnerships and collaboration vendors/joint ventures to get more real-world data, have more disease specific evaluations to assist building our next version 
+- Enrich service consultation to our customers
+- Future growth engineering: extra functionalities/innovations to expand addressable market.
+
+
+</p>
+                                                <br/>
+                                    </div>
+            </div>
+        </div>
+        <!-- /grid item -->
+
+        <!-- Grid Item -->
+        <div class="col-xl-3 col-md-4 col-sm-5">
+            <!-- Card -->
+            <div class="dt-card bg-transparent shadow-none">
+                <div class="d-none d-sm-block">
+                    <!-- Entry Header -->
+                    <div class="dt-entry__header mb-5">
+                        ONE LINER                    </div>
+            
+                    <div>
+                        <p>Ultra-fast deep learning virtual screening &gt;1B compounds for drug discovery with minimal resources</p>
+                    </div>
+                </div>
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">TEAM</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+
+
+
+
+
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">FUNDING</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">PATENTS</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">AWARDS</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">INCUBATIONS/ACCELERATIONS</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Jobs</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Perks</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+            </div>
+            <!-- /card -->
+        </div>
+        <!-- /grid item -->
+    </div>
+    <!-- /grid -->
+                                <!-- DpG/Mat25:35 -->
+                            </div>
+                            <!-- /site content -->
+
+                        </div>
+                        <!-- /site content wrapper -->
+                </main>
+                <!-- /main -->
+
+                <!-- Footer -->
+                <footer class="dt-footer">
+                    <div class="dt-container">
+                        <center>
+                            <div class="row" style="max-width:930px;">
+                                <div class="col">
+                                    <small>Provided By</small><br/>
+                                                                            <a href="https://www.elevategreece.gov.gr" target="_blank">
+                                            <img src="https://registry.elevategreece.gov.gr/uploads/2020/04/1586759140-logo_640.png" style="height:60px;"/>
+                                        </a>
+                                                                    </div>
+                                                                    <div class="col">
+                                    <small>Supported By</small><br/>
+                                        <img src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/eg/supporters.svg" style="height:60px;"/>
+                                    </div>
+                                                                <div class="col">
+                                    <small>Powered By</small><br/>
+                                    <a href="https://www.mantisbi.io" target="_blank">
+                                        <img src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/logo_mantis.png" style="height:60px;"/>
+                                    </a>
+                                </div>
+                            </div>
+                            <span style="height:7px !important;"> </span>
+                            <p>© 2023, All rigths reserved - Licensed to <b>National Startup Registry</b>, a <a href="https://www.mantisbi.io" target="_blank">Mantis Innovation Management System</a> installation.</p>
+                        </center>
+                    </div>
+                </footer>
+                <!-- /footer -->
+
+    	    </div>
+        </div>
+        <!-- /root -->
+        
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/moment.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/bootstrap.bundle.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/perfect-scrollbar.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/masonry.pkgd.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/sweetalert2.all.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/Chart.bundle.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/jquery.dataTables.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/dataTables.bootstrap4.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/script.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-164790695-1"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);} gtag("js", new Date()); gtag("config", "UA-164790695-1");</script>    
+
+</body></html>

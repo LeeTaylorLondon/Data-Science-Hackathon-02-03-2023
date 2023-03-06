@@ -1,0 +1,760 @@
+﻿<!DOCTYPE html>
+<html><head>
+    	<meta charset="utf-8"/>
+	    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    	<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+	    <meta content="National Startup Registry, Innovative Energy Materials Technologies, private company" name="description"/>	
+		
+		<meta content="article" property="og:type"/><meta content="Innovative Energy Materials Technologies, private company" property="og:title"/><meta content="Batteries Beyond Barriers: making cold weather irrelevant for batteries" property="og:description"/><meta content="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/eg/share-image.jpg" property="og:image"/><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/>	    <title>National Startup Registry, Innovative Energy Materials Technologies, private company</title>
+
+    	<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/eg/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+
+		<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/css/bootstrap.min.css" rel="stylesheet"/>
+
+		<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/css/dataTables.bootstrap4.min.css" rel="stylesheet"/>
+		<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/css/perfect-scrollbar.css" rel="stylesheet"/>
+
+    	<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/css/style.css" rel="stylesheet"/>
+		<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/css/lite-style-1.min.css" rel="stylesheet"/>
+		<link href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet"/>
+		<script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/jquery.min.js"></script>
+		<style>
+			.pre, pre {word-wrap: break-word; white-space: pre-wrap;}
+		</style>
+		<script>
+			//handle AJAX requests
+			var tmotHnd;
+			function showLoader() {
+				$('.dt-loader-container').css("display","block");
+				$('.dt-root').css("display","none");
+				tmotHnd = setTimeout(function() {
+					alert('Looks like the request takes longer than expected. Please try to refresh the page and try again. Check also your internet connection.');
+					$('.dt-loader-container').css("display","none");
+					$('.dt-root').css("display","block");
+					clearTimeout(tmotHnd);
+				}, 
+				20000);
+			}
+			function hideLoader() {
+				$('.dt-loader-container').css("display","none");
+				$('.dt-root').css("display","block");
+				clearTimeout(tmotHnd);
+			}
+
+			$(document).ready(function() {
+				$('input[type="url"]')
+				.focusout(function() {
+					if ($(this).val() != "" && !/^((http|https):\/\/)/.test($(this).val())) {
+						$(this).val("https://" + $(this).val());
+					}
+				});
+				if ( $('inpute[type="date"]').prop('type') != 'date' ) {
+					if (/^((?!chrome|android).)*safari/i.test(navigator.userAgent)) {
+						var e = $('input[type="date"]');
+						$.each(e, (ind, elem) => {
+							var dp = {
+								dateFormat: 'yy/mm/dd',
+								changeMonth: true,
+								changeYear: true,
+								defaultDate: null
+							};
+							if (typeof elem.max !== "undefined") {
+								dp['maxdate'] = new Date(elem.max);
+							}
+							if (typeof elem.min !== "undefined") {
+								dp['mindate'] = new Date(elem.min);
+							}
+							$('#' + elem.id).datepicker(dp);
+						});
+					}
+				}
+			});
+
+			function switchRole(toRole) {
+				location.href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/functions/user/switch.php?r=" + toRole + "&nonce=03b26e86f5ad156e8b3607e0cc9a00e1";
+			}
+		</script>
+	</head>
+	<body>
+		<!-- loader -->		
+		<div class="dt-loader-container">
+			<div class="dt-loader">				
+				<svg class="circular" viewBox="25 25 50 50">
+      				<circle class="path" cx="50" cy="50" fill="none" r="20" stroke-miterlimit="10" stroke-width="2"></circle>
+    			</svg>
+			</div>
+		</div>
+		<!-- /loader -->
+
+		<!-- Root -->
+		<div class="dt-root">
+    		<div class="dt-root-inner">
+								<!-- Header -->
+				<header class="dt-header dt-header__dark">
+					<!-- Topbar -->
+					<div class="dt-topbar">
+                		<!-- Custom Container -->
+                		<div class="dt-container">	
+                    		<!-- Topbar Inner -->
+                    		<div class="dt-topbar__inner">
+								<ul class="dt-nav-login text-uppercase">
+																			<li>
+											<a href="https://registry.elevategreece.gov.gr/login?go=https%3A%2F%2Fregistry.elevategreece.gov.gr%2Fcompany">Log In</a>
+										</li>
+										<li>
+											<a href="https://registry.elevategreece.gov.gr/signup?go=https%3A%2F%2Fregistry.elevategreece.gov.gr%2Fcompany">Sign Up</a>
+										</li>
+																	</ul>
+							</div>
+							<!-- /topbar inner -->
+                		</div>
+                		<!-- /custom container -->
+            		</div>
+					<!-- /topbar -->
+					
+					<!-- Header Top -->
+					<div class="dt-header__top">
+						<!-- Custom Container -->
+						<div class="dt-container">
+							<!-- Brand -->
+							<div class="dt-brand">
+								<!-- Brand tool -->
+								<div class="dt-brand__tool d-lg-none" data-toggle="main-sidebar">
+									<div class="hamburger-inner"></div>
+								</div>
+								<!-- /brand tool -->
+						
+								<!-- Brand logo -->
+								<span class="dt-brand__logo">
+									<a class="dt-brand__logo-link" href="https://registry.elevategreece.gov.gr">
+										<img alt="Home" class="dt-brand__logo-img d-none d-sm-inline-block" src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/eg/logo_white.png"/>
+										<img alt="Home" class="dt-brand__logo-symbol d-sm-none" src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/eg/logo_white.png"/>
+									</a>
+								</span>
+								<!-- /brand logo -->
+
+							</div>
+							<!-- /brand -->
+		
+							<!-- Header toolbar-->
+							<div class="dt-header__toolbar">
+								<!-- Navbar -->
+								<ul class="navbar-nav navbar-expand-lg dt-navbar d-none d-lg-flex">
+																</ul>
+								<!-- /navbar -->
+
+								<div class="dt-nav-wrapper">
+																	</div>
+							</div>
+							<!-- /header toolbar -->
+						</div>
+						<!-- /custom container -->
+					</div>
+					<!-- /header top -->
+				</header>
+				<!-- /header -->
+
+                <!-- Site Main -->
+                <main class="dt-main">
+					
+                    <!-- Site Content Wrapper -->
+                    <div class="dt-content-wrapper">
+                        <!-- Site Content -->
+                        <div class="dt-content">
+
+						    <!-- Grid -->
+    <div class="row">
+        <!-- Grid Item -->
+        <div class="col-xl-3 col-md-4 col-sm-5">
+            <!-- User Information -->
+            <div class="card user-bg-card" style="background-image: url('https://registry.elevategreece.gov.gr/uploads/2023/01/1673373797-Logo_INEM.png');">
+                <div class="user-bg-card__info p-5">
+                    <span class="dt-avatar-name mb-1 text-white">
+                        Innovative Energy Materials Technologies, private company                    </span>
+                    <span class="d-inline-block f-12">Xanthi, Greece</span>
+                </div>
+            </div>
+            <!-- /user information -->
+
+                        <br/>
+            <div class="d-none d-sm-block">
+                <p>Company Website: <a href="https://www.inem.gr" target="_blank">https://www.inem.gr</a></p>
+                <p>Company Email: <a href="mailto:moutsiou@inem.gr">moutsiou@inem.gr</a></p>
+                <p>Employees: 6</p>
+                <p>Funding State: Bootstrapped</p>
+            </div>
+
+            <!-- Separator -->
+            <hr class="my-6"/>
+            <!-- /separator -->
+
+            <div class="d-none d-sm-block">
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Industries</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- List -->
+                <ul class="dt-list mb-8">
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Environment &amp; Energy (GreenTech, CleanTech)</span>
+                        </li>
+                        <!-- /list item -->
+                                    </ul>
+                <!-- /list -->
+            </div>
+
+            <!-- Separator -->
+            <hr class="my-6"/>
+            <!-- /separator -->  
+
+            <div class="d-none d-sm-block">
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Technology</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- List -->
+                <ul class="dt-list mb-8">
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Cleantech</span>
+                        </li>
+                        <!-- /list item -->
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Hardware</span>
+                        </li>
+                        <!-- /list item -->
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Nanotech</span>
+                        </li>
+                        <!-- /list item -->
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Other</span>
+                        </li>
+                        <!-- /list item -->
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Sensors</span>
+                        </li>
+                        <!-- /list item -->
+                                    </ul>
+                <!-- /list -->
+            </div>
+
+            <!-- Separator -->
+            <hr class="my-6"/>
+            <!-- /separator -->  
+
+            <div class="d-none d-sm-block">
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Business Model</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- List -->
+                <ul class="dt-list mb-8">
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">B2B</span>
+                        </li>
+                        <!-- /list item -->
+                                    </ul>
+                <!-- /list -->
+            </div>
+          
+            <!-- Separator -->
+            <hr class="my-6"/>
+            <!-- /separator -->  
+
+            <div class="d-none d-sm-block">
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Revenue Model</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- List -->
+                <ul class="dt-list mb-8">
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Licencing</span>
+                        </li>
+                        <!-- /list item -->
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Marketplace/Brokerage</span>
+                        </li>
+                        <!-- /list item -->
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Other</span>
+                        </li>
+                        <!-- /list item -->
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Price per Use</span>
+                        </li>
+                        <!-- /list item -->
+                                    </ul>
+                <!-- /list -->
+            </div>
+
+            <!-- Separator -->
+            <hr class="my-6"/>
+            <!-- /separator -->  
+
+            <div class="d-none d-sm-block">
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Funding Sources</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- List -->
+                <ul class="dt-list mb-8">
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Other</span>
+                        </li>
+                        <!-- /list item -->
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Self</span>
+                        </li>
+                        <!-- /list item -->
+                                    </ul>
+                <!-- /list -->
+            </div>          
+        </div>
+        <!-- /grid item -->
+
+        <!-- Grid Item -->
+        <div class="col-xl-6 col-md-8 col-sm-7">
+            <div class="card">
+                <div class="card-body">
+                                                                        <h3>About</h3>
+                            <p class="pre">Innovative Energy Materials Technologies (INEM or INEM Technologies), is a deep-tech, innovative and private company founded in 2020 as a spin-off of Micro &amp; Nanotechnology Laboratory of Democritus University of Thrace (MNTL@DUTh).  We are based on the Kimmeria University Campus in Xanthi, Greece, at the ATHENA Research Center.
+
+We develop technologies for innovative energy applications, including battery, sensors, and photovoltaic cells technologies. 
+
+We focus on advanced Li-ion batteries, and we provide technology for high-energy density batteries that eliminate the low temperature challenge (cold challenge) and enable sustainable mobility for all.
+ 
+INEM envisions a future where Li-ion batteries will function beyond the existing limits of temperature, weight, charging time and lifetime. 
+
+"Batteries Beyond Barriers" is what we are striving for, so to enable movement in every situation and environment.
+
+OUR HISTORY
+Significant technological breakthrough and knowledge was gained for MNTL@DUTh via a series of Projects (2013-2019), funded by the European Space Agency for space batteries, that eventually led to a joined Patent  (Farmakis et all, PCT/GR2017/00030/2017-01939) for the so- called HELT ™ battery cell technology. This was Generation 1.0 Cell that addressed the “cold – challenge” and reached TRL4.
+
+Given the experience gained , INEM Technologies was established, and continued the journey for tackling the low-temperature problem for Li-ion batteries.</p>
+                                                <br/>
+                                                                        <h3>Solution &amp; Product</h3>
+                            <p class="pre">THE PROBLEM
+Li-ion battery technology is the most widespread battery technology for now and the one that will dominate the next 10-15 years era given the huge investments in the giga factories and the roadmap to the next generation Electrical Vehicle (EV) battery technology.
+
+However, Li-ion batteries suffer immensely at low temperatures, especially below −10 °C:  low-capacity retention, large capacity fade ratio and inability to charge efficiently. Unless heated, the batteries cannot operate efficiently.  But external heaters take long to heat up the battery, add weight to the battery system, and have high costs. Typical EVs are heating the battery by resistive or PCT heating (pros: simple design con: high heat losses, long heating time, non-uniform heating, battery end of life (EOL) is accelerated. Newest EV models are integrating an external heating pump (Pros: known technology, Cons: faces limitations in sub-zero temperatures, adaptations in vehicle designed are needed).
+
+OUR SOLUTION AND PRODUCT
+Our Gen 2.0 technology, the AIM ™ Battery Cell Technology, makes cold weather irrelevant for EVs. Our technology can make the battery to heat up from (- 40 oC) to (+20 oC) in only a few seconds, uniformly, with low energy consumption, is industry-compatible, is safe and has low environmental footprint. AIM ™ Battery Cell is a self-heated cell.
+
+</p>
+                                                <br/>
+                                                                        <h3>Innovation &amp; Scalability</h3>
+                            <p class="pre">INNOVATION
+For Battery manufacturers, Electrical Vehicle manufacturers and other Systems’ Integrators, our AIM™ Battery Cell Technology, is the most efficient Li-ion Battery Technology that makes cold weather irrelevant for e-mobility, because:  
+1.theats up in secs, uniformly, with low energy consumption
+2.tenables fast charging and longer range 
+3.tprolongs battery life 
+4.tis battery chemistry agnostic 
+5.thas industrial compatibility 
+
+SCALABILITY
+Obviously, the potentiality of our AIM ™ Battery Technology addresses the global cold EV battery market. 
+
+Also, given the chemistry-agonistic nature of our AIM™ Cell, the scalability of this technology is established in all the spectrum of the Li-ion battery chemistries used or will be used in the EV industry.
+
+Furthermore, is scalable in terms of application: our battery technology is an enabling technology for several applications for the: 
+•te-mobility and micro mobility sector (EVs, drones, e-bikes, scooters, etc.)
+•tspace sector (LEO, GEO satellites, exploration vehicles, etc.) 
+•tportable power tools sector
+•tdefence sector (drones, surveillance systems, etc.)
+
+Additionally, and based on its industrial compatibility, AIM™ Battery Cell Technology can be integrated in typical batteries’ manufacturing facilities with some production-line adaptations.
+</p>
+                                                <br/>
+                                                                        <h3>Traction &amp; achievements</h3>
+                            <p class="pre">Although INEM was funded in early 2020 and is geographically located in a regional environment (north-east Greece, Xanthi) has managed to attract the interest of the European Space Agency (ESA). ESA is funding our idea- Project (Q1 2022- Q3 2023) that brings our AIM ™ Technology to space batteries.
+Moreover, we have established an RDI cooperation with Systems Sunlight SA, an international battery manufacturer and established member of the global battery supply chain, with manufacturing capacity in North US and Europe, i.e. Germany, Italy and Greece (Xanthi).  
+In June 2022 we were accepted in the 10th cycle (6/22-6/23) of the Enter-Grow-Go (EGG) Innitiative, the Business Accelerator Program managed by Eurobank and Corallia. 
+Finally, our IPR strategy has been activated and patent filling for AIM (TM) Battery Cell will be concluded in Q1 2023.
+</p>
+                                                <br/>
+                                                                        <h3>Team &amp; Why Us</h3>
+                            <p class="pre">In INEM we have the knowledge, expertise, and shared willingness to bring into market a solution that will make the green transition faster, better, and accessible to all. 
+
+We have a deep understanding of the low temperature challenge for the Li-ion batteries . We all have engineering/science background (Academia, PhD, MSc) and our expertise is complementary.  We have entrepreneurial and managerial experience including project management and HR management.  
+
+We have a large network of industrial and academic partners that could help us. 
+
+INEM’s team have been working together for more than 8 yrs and we enjoy it. Our values are Trust, Credibility, Flexibility, High quality, Hard-working Ethos. Our team culture is strong, and we have persevered several challenges that would make others quit. We are flexible, creative thinkers and engaged in this journey.
+
+The market for Electrical Vehicles is estimated to reach 35% of global vehicle market share in 2040. The EV market potential is unprecedented: from $246,7 billions (2020) to $1318,2 billions (2028) with CAGR 24,3%. 
+
+Batteries account up to 1/3 of EV costs and data shows that 2,3 billion peoples experience cold weather conditions as part of their every-day living, working, and commuting. Unless, provided with a sustainable, affordable and easy solution, this 2,3 billion peoples, will be the last to enter the EV revolution, at a time that the green transition is more urgent than ever.</p>
+                                                <br/>
+                                                                        <h3>Funding Needs</h3>
+                            <p class="pre">1.21 Million USD will be needed in the next 3-years period that will be allocated as follows: 60% Product Development (TRL4 to TRL6), 20% Marketing/Sales, 15% Operation/Inventory, 3% Legal and 2% other.
+</p>
+                                                <br/>
+                                    </div>
+            </div>
+        </div>
+        <!-- /grid item -->
+
+        <!-- Grid Item -->
+        <div class="col-xl-3 col-md-4 col-sm-5">
+            <!-- Card -->
+            <div class="dt-card bg-transparent shadow-none">
+                <div class="d-none d-sm-block">
+                    <!-- Entry Header -->
+                    <div class="dt-entry__header mb-5">
+                        ONE LINER                    </div>
+            
+                    <div>
+                        <p>Batteries Beyond Barriers: making cold weather irrelevant for batteries</p>
+                    </div>
+                </div>
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">TEAM</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                                                    <!-- Widget Item -->
+                        <div class="dt-widget__item px-0">
+                            <!-- Widget Image -->
+                            <div class="dt-widget__img">
+                                <!-- Avatar -->
+                                <img alt="Filippos  Farmakis" class="dt-avatar size-35 rounded" src="https://registry.elevategreece.gov.gr/uploads/2023/01/Filippos_red.jpg"/>
+                                <!-- /avatar -->
+                            </div>
+                            <!-- /widget image -->
+                            <!-- Widget Info -->
+                            <div class="dt-widget__info">
+                                Filippos  Farmakis, CoFounder                            </div>
+                            <!-- /widget info -->
+                        </div>
+                        <!-- /widgets item -->
+                                                                    <!-- Widget Item -->
+                        <div class="dt-widget__item px-0">
+                            <!-- Widget Image -->
+                            <div class="dt-widget__img">
+                                <!-- Avatar -->
+                                <img alt="Maria Moutsiou" class="dt-avatar size-35 rounded" src="https://registry.elevategreece.gov.gr/uploads/2023/01/Maria_01 αντίγραφο.jpg"/>
+                                <!-- /avatar -->
+                            </div>
+                            <!-- /widget image -->
+                            <!-- Widget Info -->
+                            <div class="dt-widget__info">
+                                Maria Moutsiou, CoFounder                            </div>
+                            <!-- /widget info -->
+                        </div>
+                        <!-- /widgets item -->
+                                                                    <!-- Widget Item -->
+                        <div class="dt-widget__item px-0">
+                            <!-- Widget Image -->
+                            <div class="dt-widget__img">
+                                <!-- Avatar -->
+                                <img alt="George  Zardalidis" class="dt-avatar size-35 rounded" src="https://registry.elevategreece.gov.gr/uploads/2023/01/Portraits_MNTL_INEM_09.jpg"/>
+                                <!-- /avatar -->
+                            </div>
+                            <!-- /widget image -->
+                            <!-- Widget Info -->
+                            <div class="dt-widget__info">
+                                George  Zardalidis, Other                            </div>
+                            <!-- /widget info -->
+                        </div>
+                        <!-- /widgets item -->
+                                                                    <!-- Widget Item -->
+                        <div class="dt-widget__item px-0">
+                            <!-- Widget Image -->
+                            <div class="dt-widget__img">
+                                <!-- Avatar -->
+                                <img alt="Petros  Selinis" class="dt-avatar size-35 rounded" src="https://registry.elevategreece.gov.gr/uploads/2023/01/Portraits_MNTL_INEM_11.jpg"/>
+                                <!-- /avatar -->
+                            </div>
+                            <!-- /widget image -->
+                            <!-- Widget Info -->
+                            <div class="dt-widget__info">
+                                Petros  Selinis, Other                            </div>
+                            <!-- /widget info -->
+                        </div>
+                        <!-- /widgets item -->
+                                    </div>
+                <!-- /widget -->
+
+
+
+
+
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">FUNDING</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                            <!-- Patent row -->
+                        <div class="media mb-5">
+                            <i class="icon icon-diamond icon-xl mr-5"></i>
+                            <!-- Media Body -->
+                            <div class="media-body">
+                                <span class="d-block text-light-gray f-12 mb-1">2022 - Pre Seed, Grant</span>
+                                EUR 175K, European Space Agency                            </div>
+                            <!-- /media body -->
+                        </div>
+                                    </div>
+                <!-- /widget -->
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">PATENTS</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                            <!-- Patent row -->
+                        <div class="media mb-5">
+                            <i class="icon icon-setting icon-xl mr-5"></i>
+                            <!-- Media Body -->
+                            <div class="media-body">
+                                <span class="d-block text-light-gray f-12 mb-1">International Patent - Pending</span>
+                                PCT                            </div>
+                            <!-- /media body -->
+                        </div>
+                                    </div>
+                <!-- /widget -->
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">AWARDS</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">INCUBATIONS/ACCELERATIONS</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                            <!-- Patent row -->
+                        <div class="media mb-5">
+                            <i class="icon icon-timeline icon-xl mr-5"></i>
+                            <!-- Media Body -->
+                            <div class="media-body">
+                                <span class="d-block text-light-gray f-12 mb-1">2023 - Program</span>
+                                Enter- Grow- Go (EGG)                            </div>
+                            <!-- /media body -->
+                        </div>
+                                            <!-- Patent row -->
+                        <div class="media mb-5">
+                            <i class="icon icon-timeline icon-xl mr-5"></i>
+                            <!-- Media Body -->
+                            <div class="media-body">
+                                <span class="d-block text-light-gray f-12 mb-1">2022 - Program</span>
+                                Enter-Grow -Go (EGG)                            </div>
+                            <!-- /media body -->
+                        </div>
+                                    </div>
+                <!-- /widget -->
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Jobs</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                            <!-- Patent row -->
+                        <div class="media mb-5">
+                            <i class="icon icon-avatar icon-xl mr-5"></i>
+                            <!-- Media Body -->
+                            <div class="media-body">
+                                <span class="d-block text-light-gray f-12 mb-1">Xanthi - Part Time</span>
+                                <a href="https://www.linkedin.com/company/inemtechologies/" target="_blank">Social media content curator (Technical content) with graphic designing skills (remote position)</a>
+                            </div>
+                            <!-- /media body -->
+                        </div>
+                                    </div>
+                <!-- /widget -->
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Perks</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+            </div>
+            <!-- /card -->
+        </div>
+        <!-- /grid item -->
+    </div>
+    <!-- /grid -->
+                                <!-- DpG/Mat25:35 -->
+                            </div>
+                            <!-- /site content -->
+
+                        </div>
+                        <!-- /site content wrapper -->
+                </main>
+                <!-- /main -->
+
+                <!-- Footer -->
+                <footer class="dt-footer">
+                    <div class="dt-container">
+                        <center>
+                            <div class="row" style="max-width:930px;">
+                                <div class="col">
+                                    <small>Provided By</small><br/>
+                                                                            <a href="https://www.elevategreece.gov.gr" target="_blank">
+                                            <img src="https://registry.elevategreece.gov.gr/uploads/2020/04/1586759140-logo_640.png" style="height:60px;"/>
+                                        </a>
+                                                                    </div>
+                                                                    <div class="col">
+                                    <small>Supported By</small><br/>
+                                        <img src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/eg/supporters.svg" style="height:60px;"/>
+                                    </div>
+                                                                <div class="col">
+                                    <small>Powered By</small><br/>
+                                    <a href="https://www.mantisbi.io" target="_blank">
+                                        <img src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/logo_mantis.png" style="height:60px;"/>
+                                    </a>
+                                </div>
+                            </div>
+                            <span style="height:7px !important;"> </span>
+                            <p>© 2023, All rigths reserved - Licensed to <b>National Startup Registry</b>, a <a href="https://www.mantisbi.io" target="_blank">Mantis Innovation Management System</a> installation.</p>
+                        </center>
+                    </div>
+                </footer>
+                <!-- /footer -->
+
+    	    </div>
+        </div>
+        <!-- /root -->
+        
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/moment.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/bootstrap.bundle.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/perfect-scrollbar.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/masonry.pkgd.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/sweetalert2.all.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/Chart.bundle.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/jquery.dataTables.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/dataTables.bootstrap4.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/script.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-164790695-1"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);} gtag("js", new Date()); gtag("config", "UA-164790695-1");</script>    
+
+</body></html>

@@ -1,0 +1,621 @@
+﻿<!DOCTYPE html>
+<html><head>
+    	<meta charset="utf-8"/>
+	    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    	<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+	    <meta content="National Startup Registry, kleesto" name="description"/>	
+		
+		<meta content="article" property="og:type"/><meta content="kleesto" property="og:title"/><meta content="kleesto, the smart Destination Management Software enabling sustainable travel ecosystems." property="og:description"/><meta content="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/eg/share-image.jpg" property="og:image"/><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/>	    <title>National Startup Registry, kleesto</title>
+
+    	<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/eg/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+
+		<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/css/bootstrap.min.css" rel="stylesheet"/>
+
+		<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/css/dataTables.bootstrap4.min.css" rel="stylesheet"/>
+		<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/css/perfect-scrollbar.css" rel="stylesheet"/>
+
+    	<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/css/style.css" rel="stylesheet"/>
+		<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/css/lite-style-1.min.css" rel="stylesheet"/>
+		<link href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet"/>
+		<script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/jquery.min.js"></script>
+		<style>
+			.pre, pre {word-wrap: break-word; white-space: pre-wrap;}
+		</style>
+		<script>
+			//handle AJAX requests
+			var tmotHnd;
+			function showLoader() {
+				$('.dt-loader-container').css("display","block");
+				$('.dt-root').css("display","none");
+				tmotHnd = setTimeout(function() {
+					alert('Looks like the request takes longer than expected. Please try to refresh the page and try again. Check also your internet connection.');
+					$('.dt-loader-container').css("display","none");
+					$('.dt-root').css("display","block");
+					clearTimeout(tmotHnd);
+				}, 
+				20000);
+			}
+			function hideLoader() {
+				$('.dt-loader-container').css("display","none");
+				$('.dt-root').css("display","block");
+				clearTimeout(tmotHnd);
+			}
+
+			$(document).ready(function() {
+				$('input[type="url"]')
+				.focusout(function() {
+					if ($(this).val() != "" && !/^((http|https):\/\/)/.test($(this).val())) {
+						$(this).val("https://" + $(this).val());
+					}
+				});
+				if ( $('inpute[type="date"]').prop('type') != 'date' ) {
+					if (/^((?!chrome|android).)*safari/i.test(navigator.userAgent)) {
+						var e = $('input[type="date"]');
+						$.each(e, (ind, elem) => {
+							var dp = {
+								dateFormat: 'yy/mm/dd',
+								changeMonth: true,
+								changeYear: true,
+								defaultDate: null
+							};
+							if (typeof elem.max !== "undefined") {
+								dp['maxdate'] = new Date(elem.max);
+							}
+							if (typeof elem.min !== "undefined") {
+								dp['mindate'] = new Date(elem.min);
+							}
+							$('#' + elem.id).datepicker(dp);
+						});
+					}
+				}
+			});
+
+			function switchRole(toRole) {
+				location.href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/functions/user/switch.php?r=" + toRole + "&nonce=eddee6da0149439d3f9016a831222277";
+			}
+		</script>
+	</head>
+	<body>
+		<!-- loader -->		
+		<div class="dt-loader-container">
+			<div class="dt-loader">				
+				<svg class="circular" viewBox="25 25 50 50">
+      				<circle class="path" cx="50" cy="50" fill="none" r="20" stroke-miterlimit="10" stroke-width="2"></circle>
+    			</svg>
+			</div>
+		</div>
+		<!-- /loader -->
+
+		<!-- Root -->
+		<div class="dt-root">
+    		<div class="dt-root-inner">
+								<!-- Header -->
+				<header class="dt-header dt-header__dark">
+					<!-- Topbar -->
+					<div class="dt-topbar">
+                		<!-- Custom Container -->
+                		<div class="dt-container">	
+                    		<!-- Topbar Inner -->
+                    		<div class="dt-topbar__inner">
+								<ul class="dt-nav-login text-uppercase">
+																			<li>
+											<a href="https://registry.elevategreece.gov.gr/login?go=https%3A%2F%2Fregistry.elevategreece.gov.gr%2Fcompany">Log In</a>
+										</li>
+										<li>
+											<a href="https://registry.elevategreece.gov.gr/signup?go=https%3A%2F%2Fregistry.elevategreece.gov.gr%2Fcompany">Sign Up</a>
+										</li>
+																	</ul>
+							</div>
+							<!-- /topbar inner -->
+                		</div>
+                		<!-- /custom container -->
+            		</div>
+					<!-- /topbar -->
+					
+					<!-- Header Top -->
+					<div class="dt-header__top">
+						<!-- Custom Container -->
+						<div class="dt-container">
+							<!-- Brand -->
+							<div class="dt-brand">
+								<!-- Brand tool -->
+								<div class="dt-brand__tool d-lg-none" data-toggle="main-sidebar">
+									<div class="hamburger-inner"></div>
+								</div>
+								<!-- /brand tool -->
+						
+								<!-- Brand logo -->
+								<span class="dt-brand__logo">
+									<a class="dt-brand__logo-link" href="https://registry.elevategreece.gov.gr">
+										<img alt="Home" class="dt-brand__logo-img d-none d-sm-inline-block" src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/eg/logo_white.png"/>
+										<img alt="Home" class="dt-brand__logo-symbol d-sm-none" src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/eg/logo_white.png"/>
+									</a>
+								</span>
+								<!-- /brand logo -->
+
+							</div>
+							<!-- /brand -->
+		
+							<!-- Header toolbar-->
+							<div class="dt-header__toolbar">
+								<!-- Navbar -->
+								<ul class="navbar-nav navbar-expand-lg dt-navbar d-none d-lg-flex">
+																</ul>
+								<!-- /navbar -->
+
+								<div class="dt-nav-wrapper">
+																	</div>
+							</div>
+							<!-- /header toolbar -->
+						</div>
+						<!-- /custom container -->
+					</div>
+					<!-- /header top -->
+				</header>
+				<!-- /header -->
+
+                <!-- Site Main -->
+                <main class="dt-main">
+					
+                    <!-- Site Content Wrapper -->
+                    <div class="dt-content-wrapper">
+                        <!-- Site Content -->
+                        <div class="dt-content">
+
+						    <!-- Grid -->
+    <div class="row">
+        <!-- Grid Item -->
+        <div class="col-xl-3 col-md-4 col-sm-5">
+            <!-- User Information -->
+            <div class="card user-bg-card" style="background-image: url('https://registry.elevategreece.gov.gr/uploads/2022/09/1662485833-kleesto_logo_try1.png');">
+                <div class="user-bg-card__info p-5">
+                    <span class="dt-avatar-name mb-1 text-white">
+                        kleesto                    </span>
+                    <span class="d-inline-block f-12">Athens, Greece</span>
+                </div>
+            </div>
+            <!-- /user information -->
+
+                        <br/>
+            <div class="d-none d-sm-block">
+                <p>Company Website: <a href="https://www.kleesto.com" target="_blank">https://www.kleesto.com</a></p>
+                <p>Company Email: <a href="mailto:hello@kleesto.com">hello@kleesto.com</a></p>
+                <p>Employees: 4</p>
+                <p>Funding State: Bootstrapped</p>
+            </div>
+
+            <!-- Separator -->
+            <hr class="my-6"/>
+            <!-- /separator -->
+
+            <div class="d-none d-sm-block">
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Industries</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- List -->
+                <ul class="dt-list mb-8">
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Travel / Hospitality / Leisure</span>
+                        </li>
+                        <!-- /list item -->
+                                    </ul>
+                <!-- /list -->
+            </div>
+
+            <!-- Separator -->
+            <hr class="my-6"/>
+            <!-- /separator -->  
+
+            <div class="d-none d-sm-block">
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Technology</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- List -->
+                <ul class="dt-list mb-8">
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Cloud Computing</span>
+                        </li>
+                        <!-- /list item -->
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Data Analytics - Big Data</span>
+                        </li>
+                        <!-- /list item -->
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Software</span>
+                        </li>
+                        <!-- /list item -->
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Web or Mobile Application</span>
+                        </li>
+                        <!-- /list item -->
+                                    </ul>
+                <!-- /list -->
+            </div>
+
+            <!-- Separator -->
+            <hr class="my-6"/>
+            <!-- /separator -->  
+
+            <div class="d-none d-sm-block">
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Business Model</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- List -->
+                <ul class="dt-list mb-8">
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">B2B</span>
+                        </li>
+                        <!-- /list item -->
+                                    </ul>
+                <!-- /list -->
+            </div>
+          
+            <!-- Separator -->
+            <hr class="my-6"/>
+            <!-- /separator -->  
+
+            <div class="d-none d-sm-block">
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Revenue Model</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- List -->
+                <ul class="dt-list mb-8">
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Commission Fee</span>
+                        </li>
+                        <!-- /list item -->
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">SaaS</span>
+                        </li>
+                        <!-- /list item -->
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Subscription</span>
+                        </li>
+                        <!-- /list item -->
+                                    </ul>
+                <!-- /list -->
+            </div>
+
+            <!-- Separator -->
+            <hr class="my-6"/>
+            <!-- /separator -->  
+
+            <div class="d-none d-sm-block">
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Funding Sources</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- List -->
+                <ul class="dt-list mb-8">
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Other</span>
+                        </li>
+                        <!-- /list item -->
+                                    </ul>
+                <!-- /list -->
+            </div>          
+        </div>
+        <!-- /grid item -->
+
+        <!-- Grid Item -->
+        <div class="col-xl-6 col-md-8 col-sm-7">
+            <div class="card">
+                <div class="card-body">
+                                                                        <h3>About</h3>
+                            <p class="pre">Kleesto is the Destination Management Software helping tour operators optimize their operations and revenue management by building and digitalizing travel ecosystems.
+
+The industry is still in the "analog" ERA. 67% of the companies manage their reservations through emails and multiple calendars. Additionally, 40% check their customers against printed lists. These are error-prone and time-consuming flows. Most importantly, though, the travel industry is not yet interconnected. 
+
+So kleesto provides all the required digital infrastructures to enable the digitalization &amp; automation of daily operations. It helps the creation of local travel ecosystems through tools handed to the tour operators and finally contributes to the growth of these ecosystems. 
+
+We are addressing our service directly to Travel Agencies, Tour Operators, and Destination Management Companies. Their operation involves many external partners; these partners form the ecosystem of each company. Indirectly we can get to them and convert them to clients. 
+
+In short, by approaching the central entity, we leverage the network effect to help us reach the rest companies of its ecosystem.
+kleesto is addressing the industry of on-ground travel services, everything that happens in the destination except accommodation and flights. The market was $586B in 2019, with a CAGR of 18%, and is expected to reach 1627B in 2027. The industry is fragmented and low-tech in general, according to Phocuswright's research.</p>
+                                                <br/>
+                                                                        <h3>Solution &amp; Product</h3>
+                            <p class="pre">kleesto offers a platform for tour and experience distribution and administration. Providing solutions for organizing and operating a Tour-Operator or Destination Management Company we focus on enhancing booking operations. We digitalize operations that experience providers run for managing their equipment, resources, and personnel and allow our clients to connect with new distribution channels directly. 
+
+On top of that, we provide a wide range of options for starting and managing external booking sources and collaborations with travel agents, OTAs, marketplaces, hotels, and 3rd-party experience providers. Preset workflows and automation allow connectivity and communications handling that helps tour operators focus on what they do best. To eliminate everyday struggles like booking management, communications with partners, availability updates, partnerships, deal-management, distribution syncing, and resource management, kleesto gives an easy-to-use platform so tour operators can overview all the transactions without worrying about the business-as-usual repetitive operations. 
+
+Having covered all the base requirements, kleesto brings in cutting-edge technologies helping tour operators optimize their business growth. kleesto can introduce traits like dynamic pricing and yield management, dynamic package generation, automated handling of schedules, resources, traffic-based availability, seasonality, and enhanced company performance.</p>
+                                                <br/>
+                                                                        <h3>Innovation &amp; Scalability</h3>
+                            <p class="pre">Kleesto was developed through an iteration process of feedback with our users, leading to satisfied customers referring us to their associates and partners. Based on that we established an organic viral loop framework with its roots in distribution and communication automations provided for the threefold “Channels-Vendors-Suppliers''; an example is the case of a Private Transfers’ client which connected, as a vendor, with 400 Channels and 300 Suppliers.
+
+Furthermore, after a pilot with an important gastronomic marketplace in Greece partnered with more than 300 suppliers, we identified the opportunity and focused on destination-oriented sustainable collaboration environments, in targeted geographic segments, that increase value for travelers, travel agents, hotels and local experience &amp; travel service providers; an example is a customer in Antigua &amp; Barbuda, Caribbean, operating one of the most significant tourism marketplaces with local vendors in the area.
+
+During the pandemic, decision makers were uncertain regarding expansion steps they should make. Despite that, we can see the situation changing with them leaning towards investing in the digital transformation to optimize their operations, work more efficiently, and save money. The current barriers we face are tied to the financing of our venture to:
+a. Improve our Marketing Stack &amp; Conversion Funnels
+b. Streamline our Sales Process
+c. Fully automate our Onboarding Flow
+d. Kickstart our International Sales strategy</p>
+                                                <br/>
+                                                                        <h3>Traction &amp; achievements</h3>
+                            <p class="pre">kleesto has always been trying to stand by the side of the people trusting it with their businesses. These business owners recognized that and referred kleesto to their partners because of their satisfaction. These partners have already been using kleesto's freemium tier to partner with the kleesto client.
+
+Examples of hyperactive profiles of clients with numerous connections with partners are listed below: 
+Private transfers company in Athens. Connected with more than 350 Channels and more than 200 Suppliers. In 2021 they managed to double their revenue compared to 2019 (the best season of tourism in Greece) because of kleesto. While doing that, the market benchmarks in 2021 were approximately at 60% of 2019.
+
+Destination management company in the Caribbean. Connected with more than 100 Channels and more than 190 Suppliers. It started from Antigua and Barbuda during the pandemic and expanded to Jamaica and Barbados.
+
+Destination Management Company in Italy, working for the region of Piana di Lucca. Connected with more than 120 Channels and 100 local Suppliers. Started in early 2022 and aim to promote and enable sustainable growth in the region.
+
+Gastronomic Online Travel Agency in Greece connected with more than 400 Suppliers. They are trying to digitalize the gastronomic tourism industry in Greece.
+
+So in the past two years of the pandemic, we managed to grow organically, become sustainable and attract international clients.</p>
+                                                <br/>
+                                                                        <h3>Team &amp; Why Us</h3>
+                            <p class="pre">CEO - George Pilpilidis: Software engineer, he started his dev-career in 2009 as a freelance full-stack web and mobile developer, as well as project manager for dev teams for several years. Since 2014 he has been involved in the startup community creating and developing several companies.
+
+COO - Manolis Adamopoulos: Computer scientist with a master's in industrial management &amp; innovation, was fascinated by entrepreneurship. He has co-founded three tech startups, and he is active in the startup community since 2016.
+
+CTO - George Sotirlis: A software engineer with a passion for technology and the creation of new products. Designed, built, tested, and supported multiple products with the team, with the latest being the kleesto platform.
+
+In the past two years, we made significant growth, creating a sustainable growing business. We closed international deals and have clients that prove the business case and our solution. The COVID-19 era has brought significant interest in the digitalization of travel companies, and we are seeing a high increase in demand for our service. We need to act fast and increase the size of the team to keep up with the market's needs and maintain momentum.</p>
+                                                <br/>
+                                                                        <h3>Funding Needs</h3>
+                            <p class="pre">We have currently opened a funding round and discussing with interested parties. For relevant information, contact us at hello@kleesto.com.</p>
+                                                <br/>
+                                    </div>
+            </div>
+        </div>
+        <!-- /grid item -->
+
+        <!-- Grid Item -->
+        <div class="col-xl-3 col-md-4 col-sm-5">
+            <!-- Card -->
+            <div class="dt-card bg-transparent shadow-none">
+                <div class="d-none d-sm-block">
+                    <!-- Entry Header -->
+                    <div class="dt-entry__header mb-5">
+                        ONE LINER                    </div>
+            
+                    <div>
+                        <p>kleesto, the smart Destination Management Software enabling sustainable travel ecosystems.</p>
+                    </div>
+                </div>
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">TEAM</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+
+
+
+
+
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">FUNDING</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">PATENTS</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">AWARDS</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">INCUBATIONS/ACCELERATIONS</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Jobs</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Perks</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+            </div>
+            <!-- /card -->
+        </div>
+        <!-- /grid item -->
+    </div>
+    <!-- /grid -->
+                                <!-- DpG/Mat25:35 -->
+                            </div>
+                            <!-- /site content -->
+
+                        </div>
+                        <!-- /site content wrapper -->
+                </main>
+                <!-- /main -->
+
+                <!-- Footer -->
+                <footer class="dt-footer">
+                    <div class="dt-container">
+                        <center>
+                            <div class="row" style="max-width:930px;">
+                                <div class="col">
+                                    <small>Provided By</small><br/>
+                                                                            <a href="https://www.elevategreece.gov.gr" target="_blank">
+                                            <img src="https://registry.elevategreece.gov.gr/uploads/2020/04/1586759140-logo_640.png" style="height:60px;"/>
+                                        </a>
+                                                                    </div>
+                                                                    <div class="col">
+                                    <small>Supported By</small><br/>
+                                        <img src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/eg/supporters.svg" style="height:60px;"/>
+                                    </div>
+                                                                <div class="col">
+                                    <small>Powered By</small><br/>
+                                    <a href="https://www.mantisbi.io" target="_blank">
+                                        <img src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/logo_mantis.png" style="height:60px;"/>
+                                    </a>
+                                </div>
+                            </div>
+                            <span style="height:7px !important;"> </span>
+                            <p>© 2023, All rigths reserved - Licensed to <b>National Startup Registry</b>, a <a href="https://www.mantisbi.io" target="_blank">Mantis Innovation Management System</a> installation.</p>
+                        </center>
+                    </div>
+                </footer>
+                <!-- /footer -->
+
+    	    </div>
+        </div>
+        <!-- /root -->
+        
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/moment.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/bootstrap.bundle.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/perfect-scrollbar.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/masonry.pkgd.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/sweetalert2.all.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/Chart.bundle.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/jquery.dataTables.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/dataTables.bootstrap4.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/script.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-164790695-1"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);} gtag("js", new Date()); gtag("config", "UA-164790695-1");</script>    
+
+</body></html>

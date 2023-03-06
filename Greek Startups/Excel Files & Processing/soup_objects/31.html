@@ -1,0 +1,764 @@
+﻿<!DOCTYPE html>
+<html><head>
+    	<meta charset="utf-8"/>
+	    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    	<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+	    <meta content="National Startup Registry, ANELYSIS PCC" name="description"/>	
+		
+		<meta content="article" property="og:type"/><meta content="ANELYSIS PCC" property="og:title"/><meta content="Anelysis is an engineering and commercial company developing innovative automation systems" property="og:description"/><meta content="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/eg/share-image.jpg" property="og:image"/><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/>	    <title>National Startup Registry, ANELYSIS PCC</title>
+
+    	<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/eg/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+
+		<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/css/bootstrap.min.css" rel="stylesheet"/>
+
+		<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/css/dataTables.bootstrap4.min.css" rel="stylesheet"/>
+		<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/css/perfect-scrollbar.css" rel="stylesheet"/>
+
+    	<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/css/style.css" rel="stylesheet"/>
+		<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/css/lite-style-1.min.css" rel="stylesheet"/>
+		<link href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet"/>
+		<script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/jquery.min.js"></script>
+		<style>
+			.pre, pre {word-wrap: break-word; white-space: pre-wrap;}
+		</style>
+		<script>
+			//handle AJAX requests
+			var tmotHnd;
+			function showLoader() {
+				$('.dt-loader-container').css("display","block");
+				$('.dt-root').css("display","none");
+				tmotHnd = setTimeout(function() {
+					alert('Looks like the request takes longer than expected. Please try to refresh the page and try again. Check also your internet connection.');
+					$('.dt-loader-container').css("display","none");
+					$('.dt-root').css("display","block");
+					clearTimeout(tmotHnd);
+				}, 
+				20000);
+			}
+			function hideLoader() {
+				$('.dt-loader-container').css("display","none");
+				$('.dt-root').css("display","block");
+				clearTimeout(tmotHnd);
+			}
+
+			$(document).ready(function() {
+				$('input[type="url"]')
+				.focusout(function() {
+					if ($(this).val() != "" && !/^((http|https):\/\/)/.test($(this).val())) {
+						$(this).val("https://" + $(this).val());
+					}
+				});
+				if ( $('inpute[type="date"]').prop('type') != 'date' ) {
+					if (/^((?!chrome|android).)*safari/i.test(navigator.userAgent)) {
+						var e = $('input[type="date"]');
+						$.each(e, (ind, elem) => {
+							var dp = {
+								dateFormat: 'yy/mm/dd',
+								changeMonth: true,
+								changeYear: true,
+								defaultDate: null
+							};
+							if (typeof elem.max !== "undefined") {
+								dp['maxdate'] = new Date(elem.max);
+							}
+							if (typeof elem.min !== "undefined") {
+								dp['mindate'] = new Date(elem.min);
+							}
+							$('#' + elem.id).datepicker(dp);
+						});
+					}
+				}
+			});
+
+			function switchRole(toRole) {
+				location.href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/functions/user/switch.php?r=" + toRole + "&nonce=9b1fc1490427a8f35789e763d01d630d";
+			}
+		</script>
+	</head>
+	<body>
+		<!-- loader -->		
+		<div class="dt-loader-container">
+			<div class="dt-loader">				
+				<svg class="circular" viewBox="25 25 50 50">
+      				<circle class="path" cx="50" cy="50" fill="none" r="20" stroke-miterlimit="10" stroke-width="2"></circle>
+    			</svg>
+			</div>
+		</div>
+		<!-- /loader -->
+
+		<!-- Root -->
+		<div class="dt-root">
+    		<div class="dt-root-inner">
+								<!-- Header -->
+				<header class="dt-header dt-header__dark">
+					<!-- Topbar -->
+					<div class="dt-topbar">
+                		<!-- Custom Container -->
+                		<div class="dt-container">	
+                    		<!-- Topbar Inner -->
+                    		<div class="dt-topbar__inner">
+								<ul class="dt-nav-login text-uppercase">
+																			<li>
+											<a href="https://registry.elevategreece.gov.gr/login?go=https%3A%2F%2Fregistry.elevategreece.gov.gr%2Fcompany">Log In</a>
+										</li>
+										<li>
+											<a href="https://registry.elevategreece.gov.gr/signup?go=https%3A%2F%2Fregistry.elevategreece.gov.gr%2Fcompany">Sign Up</a>
+										</li>
+																	</ul>
+							</div>
+							<!-- /topbar inner -->
+                		</div>
+                		<!-- /custom container -->
+            		</div>
+					<!-- /topbar -->
+					
+					<!-- Header Top -->
+					<div class="dt-header__top">
+						<!-- Custom Container -->
+						<div class="dt-container">
+							<!-- Brand -->
+							<div class="dt-brand">
+								<!-- Brand tool -->
+								<div class="dt-brand__tool d-lg-none" data-toggle="main-sidebar">
+									<div class="hamburger-inner"></div>
+								</div>
+								<!-- /brand tool -->
+						
+								<!-- Brand logo -->
+								<span class="dt-brand__logo">
+									<a class="dt-brand__logo-link" href="https://registry.elevategreece.gov.gr">
+										<img alt="Home" class="dt-brand__logo-img d-none d-sm-inline-block" src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/eg/logo_white.png"/>
+										<img alt="Home" class="dt-brand__logo-symbol d-sm-none" src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/eg/logo_white.png"/>
+									</a>
+								</span>
+								<!-- /brand logo -->
+
+							</div>
+							<!-- /brand -->
+		
+							<!-- Header toolbar-->
+							<div class="dt-header__toolbar">
+								<!-- Navbar -->
+								<ul class="navbar-nav navbar-expand-lg dt-navbar d-none d-lg-flex">
+																</ul>
+								<!-- /navbar -->
+
+								<div class="dt-nav-wrapper">
+																	</div>
+							</div>
+							<!-- /header toolbar -->
+						</div>
+						<!-- /custom container -->
+					</div>
+					<!-- /header top -->
+				</header>
+				<!-- /header -->
+
+                <!-- Site Main -->
+                <main class="dt-main">
+					
+                    <!-- Site Content Wrapper -->
+                    <div class="dt-content-wrapper">
+                        <!-- Site Content -->
+                        <div class="dt-content">
+
+						    <!-- Grid -->
+    <div class="row">
+        <!-- Grid Item -->
+        <div class="col-xl-3 col-md-4 col-sm-5">
+            <!-- User Information -->
+            <div class="card user-bg-card" style="background-image: url('https://registry.elevategreece.gov.gr/uploads/2021/05/1622126899-anelysis_logo.jpeg');">
+                <div class="user-bg-card__info p-5">
+                    <span class="dt-avatar-name mb-1 text-white">
+                        ANELYSIS PCC                    </span>
+                    <span class="d-inline-block f-12">Athens, Greece</span>
+                </div>
+            </div>
+            <!-- /user information -->
+
+                        <br/>
+            <div class="d-none d-sm-block">
+                <p>Company Website: <a href="https://www.anelysis.com" target="_blank">https://www.anelysis.com</a></p>
+                <p>Company Email: <a href="mailto:a.karatheodoros@key-bsi.gr">a.karatheodoros@key-bsi.gr</a></p>
+                <p>Employees: 2</p>
+                <p>Funding State: Seed</p>
+            </div>
+
+            <!-- Separator -->
+            <hr class="my-6"/>
+            <!-- /separator -->
+
+            <div class="d-none d-sm-block">
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Industries</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- List -->
+                <ul class="dt-list mb-8">
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Manufacturing</span>
+                        </li>
+                        <!-- /list item -->
+                                    </ul>
+                <!-- /list -->
+            </div>
+
+            <!-- Separator -->
+            <hr class="my-6"/>
+            <!-- /separator -->  
+
+            <div class="d-none d-sm-block">
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Technology</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- List -->
+                <ul class="dt-list mb-8">
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">AI</span>
+                        </li>
+                        <!-- /list item -->
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Cloud Computing</span>
+                        </li>
+                        <!-- /list item -->
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Hardware</span>
+                        </li>
+                        <!-- /list item -->
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">IoT</span>
+                        </li>
+                        <!-- /list item -->
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Robotics</span>
+                        </li>
+                        <!-- /list item -->
+                                    </ul>
+                <!-- /list -->
+            </div>
+
+            <!-- Separator -->
+            <hr class="my-6"/>
+            <!-- /separator -->  
+
+            <div class="d-none d-sm-block">
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Business Model</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- List -->
+                <ul class="dt-list mb-8">
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">B2B</span>
+                        </li>
+                        <!-- /list item -->
+                                    </ul>
+                <!-- /list -->
+            </div>
+          
+            <!-- Separator -->
+            <hr class="my-6"/>
+            <!-- /separator -->  
+
+            <div class="d-none d-sm-block">
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Revenue Model</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- List -->
+                <ul class="dt-list mb-8">
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Marketplace/Brokerage</span>
+                        </li>
+                        <!-- /list item -->
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Price per Use</span>
+                        </li>
+                        <!-- /list item -->
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">SaaS</span>
+                        </li>
+                        <!-- /list item -->
+                                    </ul>
+                <!-- /list -->
+            </div>
+
+            <!-- Separator -->
+            <hr class="my-6"/>
+            <!-- /separator -->  
+
+            <div class="d-none d-sm-block">
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Funding Sources</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- List -->
+                <ul class="dt-list mb-8">
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Angel</span>
+                        </li>
+                        <!-- /list item -->
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Grant</span>
+                        </li>
+                        <!-- /list item -->
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Self</span>
+                        </li>
+                        <!-- /list item -->
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">VC</span>
+                        </li>
+                        <!-- /list item -->
+                                    </ul>
+                <!-- /list -->
+            </div>          
+        </div>
+        <!-- /grid item -->
+
+        <!-- Grid Item -->
+        <div class="col-xl-6 col-md-8 col-sm-7">
+            <div class="card">
+                <div class="card-body">
+                                                                        <h3>About</h3>
+                            <p class="pre">Anelysis is an engineering and commercial company developing innovative automation systems.
+
+We Design Solutions and systems design by experienced engineers for your applications. 
+We Supply Multiple warehouse locations, strong availability, fast dispatch, high quality &amp; original products.
+We Install On site installation, supervision &amp; commissioning, innovative technology installations.
+We Service After sales support, service &amp; repair by experienced technicians.
+
+A core aspect of the Industry 4.0 revolution for overall manufacturing efficiency is Predictive Maintenance. Experts depending on the actual condition data, collected by sensors, are forecasting the future state of the equipment and perform maintenance tasks only when warranted, long before any fault actually occurs. The cost reduction and productivity increase are impressive and stimulate a high demand for a smart factory model. 
+
+The seemingly simple deployment of sensors is in practice a cumbersome problem. It
+involves detailed preplanning, many kilometers of sensitive cables, and service crews working in harsh labor conditions to install and afterward monitor and repair damages from accidents, etc. Vast data interpretation in real-time on the other hand requires highly skilled expert personnel. 
+
+A business opportunity exists for an almost plug-and-play solution that would neither use cables nor need experts to interpret vast data in real-time.</p>
+                                                <br/>
+                                                                        <h3>Solution &amp; Product</h3>
+                            <p class="pre">LoRaWAN, an open technology, for long-range low-energy wireless communication can be a solution for the spreading of condition monitoring but the low bandwidth leads to a new requirement: edge computing. So the evaluation must be performed locally and only the diagnosis transmitted to the control room. 
+
+The product we develop is W.I.S.D.O.M. (Wireless Information System Data On Maintenance), a predictive maintenance system for industrial equipment, with integrated machine learning and artificial intelligence, operating over a long-range tended wireless network.
+
+WISDOM comprises a wireless smart vibrations sensor kit and its accompanying management software. It is compact, battery-powered, and installed on the equipment, processing the vibrations profile and transmitting periodically the diagnosis. Vibration analysis was chosen as it can spot a problem earlier than any other method.</p>
+                                                <br/>
+                                                                        <h3>Innovation &amp; Scalability</h3>
+                            <p class="pre">Our innovation lies in the combination of cutting-edge M2M, AI, LorAWAn in a unified hardware-software solution for a system that measures, interprets, diagnoses, and decides the course of action without any human intervention.
+
+Advantages compared to the few direct competitors:
+Interconnection with facility’s systems at either CMMS or SCADA level.
+Plus features like short-range raw data stream to operator’s tablet via Bluetooth.
+Compact, suitable for on-site installation.
+Increased reliability and durability even in harsh environments.
+Almost plug and play ease of installation
+Several years autonomous operation on a single battery.
+Competitive pricing.
+Well-known established customers.
+Many years of field experience with the described challenges.
+
+Advantages compared to the currently used solutions:
+Simplicity and friendly user interface for the end-user.
+Fast and easy deployment.
+No tedious and costly cabling needed. 
+No interpreting expert personnel needed.</p>
+                                                <br/>
+                                                                        <h3>Traction &amp; achievements</h3>
+                            <p class="pre">2015  Anelysis is born.
+2016  Development of first the commercial automation solution.
+2017  Joining Concibus Network as a full member.
+2018  Software development reaches version 3 (modular 100+ points monitoring)
+2019  Launching of the WLC and Total Lubrication controllers families
+2020  Wireless flowmeters integration
+
+</p>
+                                                <br/>
+                                                                        <h3>Team &amp; Why Us</h3>
+                            <p class="pre">Alexander Papathanasiou: Manager, Software Development, 6 years experience.
+Dimitris Papangelis: Dipl. Electrical Engineer, Automation Development, 6 years experience.
+Panagiota Mylona: Dipl. Product Design Engineer, Product Development, 6 years experience.
+Leonidas Tzigertzis: Business Economics, Commercial Development, 22 years experience.
+Fadi Tarabay: Dipl. Electrical Engineer, Tech Consultant, 24 years experience.
+Dimitris Papathanasiou: Dipl. Chemical Engineer, Tech Consultant, 30 years experience.
+Matthias Beerlage: Dipl. Mechanical Engineer, Tech Consultant, 35 years experience.
+
+The growth strategy is in direct proportion with the customers’ demand which as we
+mentioned earlier is growing exponentially with no emerging technology on the horizon
+which would threaten this. The interconnected smart factory that optimizes the assets
+management with a limited number of human and material resources will remain the
+prevailing trend in the following decades.
+
+Potential barriers to growth would be the lack of sufficient financing:
+To build new production lines to cope with the expected increase in sales.
+To attract more talents to further evolve the system.</p>
+                                                <br/>
+                                                                        <h3>Funding Needs</h3>
+                            <p class="pre">To further implement and expand the new IoT project W.I.S.D.O.M. (Wireless Information System Data On Maintenance), the current funding needs are estimated to approximately 5 million euros.</p>
+                                                <br/>
+                                    </div>
+            </div>
+        </div>
+        <!-- /grid item -->
+
+        <!-- Grid Item -->
+        <div class="col-xl-3 col-md-4 col-sm-5">
+            <!-- Card -->
+            <div class="dt-card bg-transparent shadow-none">
+                <div class="d-none d-sm-block">
+                    <!-- Entry Header -->
+                    <div class="dt-entry__header mb-5">
+                        ONE LINER                    </div>
+            
+                    <div>
+                        <p>Anelysis is an engineering and commercial company developing innovative automation systems</p>
+                    </div>
+                </div>
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">TEAM</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                                                    <!-- Widget Item -->
+                        <div class="dt-widget__item px-0">
+                            <!-- Widget Image -->
+                            <div class="dt-widget__img">
+                                <!-- Avatar -->
+                                <img alt="Dimitris Papangelis" class="dt-avatar size-35 rounded" src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/placeholder.jpg"/>
+                                <!-- /avatar -->
+                            </div>
+                            <!-- /widget image -->
+                            <!-- Widget Info -->
+                            <div class="dt-widget__info">
+                                Dimitris Papangelis, Other                            </div>
+                            <!-- /widget info -->
+                        </div>
+                        <!-- /widgets item -->
+                                                                    <!-- Widget Item -->
+                        <div class="dt-widget__item px-0">
+                            <!-- Widget Image -->
+                            <div class="dt-widget__img">
+                                <!-- Avatar -->
+                                <img alt="Leonidas Tzigertzis" class="dt-avatar size-35 rounded" src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/placeholder.jpg"/>
+                                <!-- /avatar -->
+                            </div>
+                            <!-- /widget image -->
+                            <!-- Widget Info -->
+                            <div class="dt-widget__info">
+                                Leonidas Tzigertzis, Other                            </div>
+                            <!-- /widget info -->
+                        </div>
+                        <!-- /widgets item -->
+                                                                    <!-- Widget Item -->
+                        <div class="dt-widget__item px-0">
+                            <!-- Widget Image -->
+                            <div class="dt-widget__img">
+                                <!-- Avatar -->
+                                <img alt="Alexander Papathanasiou" class="dt-avatar size-35 rounded" src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/placeholder.jpg"/>
+                                <!-- /avatar -->
+                            </div>
+                            <!-- /widget image -->
+                            <!-- Widget Info -->
+                            <div class="dt-widget__info">
+                                Alexander Papathanasiou, Other                            </div>
+                            <!-- /widget info -->
+                        </div>
+                        <!-- /widgets item -->
+                                                                    <!-- Widget Item -->
+                        <div class="dt-widget__item px-0">
+                            <!-- Widget Image -->
+                            <div class="dt-widget__img">
+                                <!-- Avatar -->
+                                <img alt="Panagiota Mylona" class="dt-avatar size-35 rounded" src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/placeholder.jpg"/>
+                                <!-- /avatar -->
+                            </div>
+                            <!-- /widget image -->
+                            <!-- Widget Info -->
+                            <div class="dt-widget__info">
+                                Panagiota Mylona, Other                            </div>
+                            <!-- /widget info -->
+                        </div>
+                        <!-- /widgets item -->
+                                                                    <!-- Widget Item -->
+                        <div class="dt-widget__item px-0">
+                            <!-- Widget Image -->
+                            <div class="dt-widget__img">
+                                <!-- Avatar -->
+                                <img alt="Fadi Tarabay" class="dt-avatar size-35 rounded" src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/placeholder.jpg"/>
+                                <!-- /avatar -->
+                            </div>
+                            <!-- /widget image -->
+                            <!-- Widget Info -->
+                            <div class="dt-widget__info">
+                                Fadi Tarabay, Other                            </div>
+                            <!-- /widget info -->
+                        </div>
+                        <!-- /widgets item -->
+                                                                    <!-- Widget Item -->
+                        <div class="dt-widget__item px-0">
+                            <!-- Widget Image -->
+                            <div class="dt-widget__img">
+                                <!-- Avatar -->
+                                <img alt="Dimitris Papathanasiou" class="dt-avatar size-35 rounded" src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/placeholder.jpg"/>
+                                <!-- /avatar -->
+                            </div>
+                            <!-- /widget image -->
+                            <!-- Widget Info -->
+                            <div class="dt-widget__info">
+                                Dimitris Papathanasiou, Other                            </div>
+                            <!-- /widget info -->
+                        </div>
+                        <!-- /widgets item -->
+                                                                    <!-- Widget Item -->
+                        <div class="dt-widget__item px-0">
+                            <!-- Widget Image -->
+                            <div class="dt-widget__img">
+                                <!-- Avatar -->
+                                <img alt="Matthias Beerlage" class="dt-avatar size-35 rounded" src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/placeholder.jpg"/>
+                                <!-- /avatar -->
+                            </div>
+                            <!-- /widget image -->
+                            <!-- Widget Info -->
+                            <div class="dt-widget__info">
+                                Matthias Beerlage, Other                            </div>
+                            <!-- /widget info -->
+                        </div>
+                        <!-- /widgets item -->
+                                    </div>
+                <!-- /widget -->
+
+
+
+
+
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">FUNDING</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">PATENTS</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">AWARDS</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">INCUBATIONS/ACCELERATIONS</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Jobs</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Perks</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+            </div>
+            <!-- /card -->
+        </div>
+        <!-- /grid item -->
+    </div>
+    <!-- /grid -->
+                                <!-- DpG/Mat25:35 -->
+                            </div>
+                            <!-- /site content -->
+
+                        </div>
+                        <!-- /site content wrapper -->
+                </main>
+                <!-- /main -->
+
+                <!-- Footer -->
+                <footer class="dt-footer">
+                    <div class="dt-container">
+                        <center>
+                            <div class="row" style="max-width:930px;">
+                                <div class="col">
+                                    <small>Provided By</small><br/>
+                                                                            <a href="https://www.elevategreece.gov.gr" target="_blank">
+                                            <img src="https://registry.elevategreece.gov.gr/uploads/2020/04/1586759140-logo_640.png" style="height:60px;"/>
+                                        </a>
+                                                                    </div>
+                                                                    <div class="col">
+                                    <small>Supported By</small><br/>
+                                        <img src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/eg/supporters.svg" style="height:60px;"/>
+                                    </div>
+                                                                <div class="col">
+                                    <small>Powered By</small><br/>
+                                    <a href="https://www.mantisbi.io" target="_blank">
+                                        <img src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/logo_mantis.png" style="height:60px;"/>
+                                    </a>
+                                </div>
+                            </div>
+                            <span style="height:7px !important;"> </span>
+                            <p>© 2023, All rigths reserved - Licensed to <b>National Startup Registry</b>, a <a href="https://www.mantisbi.io" target="_blank">Mantis Innovation Management System</a> installation.</p>
+                        </center>
+                    </div>
+                </footer>
+                <!-- /footer -->
+
+    	    </div>
+        </div>
+        <!-- /root -->
+        
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/moment.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/bootstrap.bundle.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/perfect-scrollbar.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/masonry.pkgd.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/sweetalert2.all.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/Chart.bundle.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/jquery.dataTables.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/dataTables.bootstrap4.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/script.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-164790695-1"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);} gtag("js", new Date()); gtag("config", "UA-164790695-1");</script>    
+
+</body></html>

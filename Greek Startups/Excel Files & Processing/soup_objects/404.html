@@ -1,0 +1,695 @@
+﻿<!DOCTYPE html>
+<html><head>
+    	<meta charset="utf-8"/>
+	    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    	<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+	    <meta content="National Startup Registry, SMARTS Private Company" name="description"/>	
+		
+		<meta content="article" property="og:type"/><meta content="SMARTS Private Company" property="og:title"/><meta content="PoliPragmon: Empowering citizens, elevating organizations, intensifying connections" property="og:description"/><meta content="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/eg/share-image.jpg" property="og:image"/><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/>	    <title>National Startup Registry, SMARTS Private Company</title>
+
+    	<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/eg/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+
+		<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/css/bootstrap.min.css" rel="stylesheet"/>
+
+		<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/css/dataTables.bootstrap4.min.css" rel="stylesheet"/>
+		<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/css/perfect-scrollbar.css" rel="stylesheet"/>
+
+    	<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/css/style.css" rel="stylesheet"/>
+		<link href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/css/lite-style-1.min.css" rel="stylesheet"/>
+		<link href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet"/>
+		<script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/jquery.min.js"></script>
+		<style>
+			.pre, pre {word-wrap: break-word; white-space: pre-wrap;}
+		</style>
+		<script>
+			//handle AJAX requests
+			var tmotHnd;
+			function showLoader() {
+				$('.dt-loader-container').css("display","block");
+				$('.dt-root').css("display","none");
+				tmotHnd = setTimeout(function() {
+					alert('Looks like the request takes longer than expected. Please try to refresh the page and try again. Check also your internet connection.');
+					$('.dt-loader-container').css("display","none");
+					$('.dt-root').css("display","block");
+					clearTimeout(tmotHnd);
+				}, 
+				20000);
+			}
+			function hideLoader() {
+				$('.dt-loader-container').css("display","none");
+				$('.dt-root').css("display","block");
+				clearTimeout(tmotHnd);
+			}
+
+			$(document).ready(function() {
+				$('input[type="url"]')
+				.focusout(function() {
+					if ($(this).val() != "" && !/^((http|https):\/\/)/.test($(this).val())) {
+						$(this).val("https://" + $(this).val());
+					}
+				});
+				if ( $('inpute[type="date"]').prop('type') != 'date' ) {
+					if (/^((?!chrome|android).)*safari/i.test(navigator.userAgent)) {
+						var e = $('input[type="date"]');
+						$.each(e, (ind, elem) => {
+							var dp = {
+								dateFormat: 'yy/mm/dd',
+								changeMonth: true,
+								changeYear: true,
+								defaultDate: null
+							};
+							if (typeof elem.max !== "undefined") {
+								dp['maxdate'] = new Date(elem.max);
+							}
+							if (typeof elem.min !== "undefined") {
+								dp['mindate'] = new Date(elem.min);
+							}
+							$('#' + elem.id).datepicker(dp);
+						});
+					}
+				}
+			});
+
+			function switchRole(toRole) {
+				location.href="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/functions/user/switch.php?r=" + toRole + "&nonce=13273ab1c5f47adee45c59bad10d3597";
+			}
+		</script>
+	</head>
+	<body>
+		<!-- loader -->		
+		<div class="dt-loader-container">
+			<div class="dt-loader">				
+				<svg class="circular" viewBox="25 25 50 50">
+      				<circle class="path" cx="50" cy="50" fill="none" r="20" stroke-miterlimit="10" stroke-width="2"></circle>
+    			</svg>
+			</div>
+		</div>
+		<!-- /loader -->
+
+		<!-- Root -->
+		<div class="dt-root">
+    		<div class="dt-root-inner">
+								<!-- Header -->
+				<header class="dt-header dt-header__dark">
+					<!-- Topbar -->
+					<div class="dt-topbar">
+                		<!-- Custom Container -->
+                		<div class="dt-container">	
+                    		<!-- Topbar Inner -->
+                    		<div class="dt-topbar__inner">
+								<ul class="dt-nav-login text-uppercase">
+																			<li>
+											<a href="https://registry.elevategreece.gov.gr/login?go=https%3A%2F%2Fregistry.elevategreece.gov.gr%2Fcompany">Log In</a>
+										</li>
+										<li>
+											<a href="https://registry.elevategreece.gov.gr/signup?go=https%3A%2F%2Fregistry.elevategreece.gov.gr%2Fcompany">Sign Up</a>
+										</li>
+																	</ul>
+							</div>
+							<!-- /topbar inner -->
+                		</div>
+                		<!-- /custom container -->
+            		</div>
+					<!-- /topbar -->
+					
+					<!-- Header Top -->
+					<div class="dt-header__top">
+						<!-- Custom Container -->
+						<div class="dt-container">
+							<!-- Brand -->
+							<div class="dt-brand">
+								<!-- Brand tool -->
+								<div class="dt-brand__tool d-lg-none" data-toggle="main-sidebar">
+									<div class="hamburger-inner"></div>
+								</div>
+								<!-- /brand tool -->
+						
+								<!-- Brand logo -->
+								<span class="dt-brand__logo">
+									<a class="dt-brand__logo-link" href="https://registry.elevategreece.gov.gr">
+										<img alt="Home" class="dt-brand__logo-img d-none d-sm-inline-block" src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/eg/logo_white.png"/>
+										<img alt="Home" class="dt-brand__logo-symbol d-sm-none" src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/eg/logo_white.png"/>
+									</a>
+								</span>
+								<!-- /brand logo -->
+
+							</div>
+							<!-- /brand -->
+		
+							<!-- Header toolbar-->
+							<div class="dt-header__toolbar">
+								<!-- Navbar -->
+								<ul class="navbar-nav navbar-expand-lg dt-navbar d-none d-lg-flex">
+																</ul>
+								<!-- /navbar -->
+
+								<div class="dt-nav-wrapper">
+																	</div>
+							</div>
+							<!-- /header toolbar -->
+						</div>
+						<!-- /custom container -->
+					</div>
+					<!-- /header top -->
+				</header>
+				<!-- /header -->
+
+                <!-- Site Main -->
+                <main class="dt-main">
+					
+                    <!-- Site Content Wrapper -->
+                    <div class="dt-content-wrapper">
+                        <!-- Site Content -->
+                        <div class="dt-content">
+
+						    <!-- Grid -->
+    <div class="row">
+        <!-- Grid Item -->
+        <div class="col-xl-3 col-md-4 col-sm-5">
+            <!-- User Information -->
+            <div class="card user-bg-card" style="background-image: url('https://registry.elevategreece.gov.gr/uploads/2021/05/1622106133-640-420.png');">
+                <div class="user-bg-card__info p-5">
+                    <span class="dt-avatar-name mb-1 text-white">
+                        SMARTS Private Company                    </span>
+                    <span class="d-inline-block f-12">Lamia, Greece</span>
+                </div>
+            </div>
+            <!-- /user information -->
+
+                        <br/>
+            <div class="d-none d-sm-block">
+                <p>Company Website: <a href="https://smarts.com.gr" target="_blank">https://smarts.com.gr</a></p>
+                <p>Company Email: <a href="mailto:info@smarts.com.gr">info@smarts.com.gr</a></p>
+                <p>Employees: 4</p>
+                <p>Funding State: Bootstrapped</p>
+            </div>
+
+            <!-- Separator -->
+            <hr class="my-6"/>
+            <!-- /separator -->
+
+            <div class="d-none d-sm-block">
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Industries</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- List -->
+                <ul class="dt-list mb-8">
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Other</span>
+                        </li>
+                        <!-- /list item -->
+                                    </ul>
+                <!-- /list -->
+            </div>
+
+            <!-- Separator -->
+            <hr class="my-6"/>
+            <!-- /separator -->  
+
+            <div class="d-none d-sm-block">
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Technology</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- List -->
+                <ul class="dt-list mb-8">
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Data Analytics - Big Data</span>
+                        </li>
+                        <!-- /list item -->
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Other</span>
+                        </li>
+                        <!-- /list item -->
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Software</span>
+                        </li>
+                        <!-- /list item -->
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Web or Mobile Application</span>
+                        </li>
+                        <!-- /list item -->
+                                    </ul>
+                <!-- /list -->
+            </div>
+
+            <!-- Separator -->
+            <hr class="my-6"/>
+            <!-- /separator -->  
+
+            <div class="d-none d-sm-block">
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Business Model</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- List -->
+                <ul class="dt-list mb-8">
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">B2G</span>
+                        </li>
+                        <!-- /list item -->
+                                    </ul>
+                <!-- /list -->
+            </div>
+          
+            <!-- Separator -->
+            <hr class="my-6"/>
+            <!-- /separator -->  
+
+            <div class="d-none d-sm-block">
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Revenue Model</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- List -->
+                <ul class="dt-list mb-8">
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Licencing</span>
+                        </li>
+                        <!-- /list item -->
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Subscription</span>
+                        </li>
+                        <!-- /list item -->
+                                    </ul>
+                <!-- /list -->
+            </div>
+
+            <!-- Separator -->
+            <hr class="my-6"/>
+            <!-- /separator -->  
+
+            <div class="d-none d-sm-block">
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Funding Sources</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- List -->
+                <ul class="dt-list mb-8">
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Grant</span>
+                        </li>
+                        <!-- /list item -->
+                                            <!-- List Item -->
+                        <li class="dt-list__item">
+                            <span class="btn btn-light bg-white border-0">Self</span>
+                        </li>
+                        <!-- /list item -->
+                                    </ul>
+                <!-- /list -->
+            </div>          
+        </div>
+        <!-- /grid item -->
+
+        <!-- Grid Item -->
+        <div class="col-xl-6 col-md-8 col-sm-7">
+            <div class="card">
+                <div class="card-body">
+                                                                        <h3>About</h3>
+                            <p class="pre">PoliPragmon: Empowering citizens, elevating organizations, intensifying connections
+Adapting to changing demands of a digital information age and the ability to remain competitive and relevant requires digital and information excellence. Additionally, for public administrations user participation, in a climate of general distrust towards governments has become an issue of fundamental significance. For companies integrating customer experiences and feedback in their decision-making and providing individualized services refers to a priority. To increase user engagement and provide customized services, organizations need to offer easy, flexible, affordable and open access to digital information and services. They need more powerful tools to extract crowdsourced knowledge, take responsible decisions and design appropriate actions. To this end, PoliPragmon offers a unique solution for the enhancement, intensification and acceleration of interactions between organizations and their target audiences, centered on fast, reliable and controllable issues resolution.
+</p>
+                                                <br/>
+                                                                        <h3>Solution &amp; Product</h3>
+                            <p class="pre">PoliPragmon is designed to increase user engagement levels in a world of growing mobility, to empower public or private administrations with a sophisticated multi-channel interaction management solution while providing user-oriented services. The platform provides sophisticated endpoints and services for citizens to submit requests and monitor their progress, pay their bills, share their experiences and prioritize needs and for organizations to efficiently manage multi-channel complaints and organize their resolution,
+consume insightful user feedback, become connected with other societal actors, engage their target audiences and better allocate their human and material resources.</p>
+                                                <br/>
+                                                                        <h3>Innovation &amp; Scalability</h3>
+                            <p class="pre">The main innovation of PoliPragmon refers to the introduction of an alternative modus operandi for local governments and private enterprises regarding their communication and interaction with the public. PoliPragmon exploits user feedback not as simple indicators of pending issues to be resolved but as unique event sources, which combined with other event triggers can enable distinct situations recognition. While allowing organizations to offer personalized issue resolution and communication services to their target audiences, PoliPragmon additionally provides access to an innovative Complex Event Processing engine, which uses employees feedback and reports, data streams from cooperating organizations, users’ collected unique characteristics, historical data and defined rules and scenarios for generating multi-level data analysis and performance reports.
+SMARTS has adapted a clear Customer Acquisition Strategy for PoliPragmon aiming atgrowth of customer base, expansion into new locations, gradual and modular introduction of new features, growth in customer acquisition rate, eventually leading to sales and
+revenue growth. The main tool of the strategy is that of a “viral loop”, where the basic premise is that a customer goes from first encountering the product to being incentivized to recommend it to others. This viral funnel incentivizes current users to share the platform benefits with their network of affiliates and contacts, instead of needing as many leads as possible.
+</p>
+                                                <br/>
+                                                                        <h3>Traction &amp; achievements</h3>
+                            <p class="pre">PoliPragmon retains a clientele including diffrerent Municipalities and Water and Sewerage companies in Greece. The respective mobile applications have been downloaded more than 5 thousand times. The platform has been presented in a number of invited workshops, while exhibiting in the 4YFN Village in the annual Smart City Expo in 2016, the world’s leading event for cities, where PoliPragmon was selected to pitch for investors and keynote attendees. A major milestone for the company was the targeted and gradual rollout of different payment methods, including the integration with the APIs of different Greek banks PSD2-compliant APIs, which definitely was a focal point for the attraction of new customers and mainly Utilities companies.</p>
+                                                <br/>
+                                                                        <h3>Team &amp; Why Us</h3>
+                            <p class="pre">SMARTS members constitute a strong interdisciplinary team with high complementarity, comprising a diverse workforce from experienced entrepreneurs  to young researchers. Key personnel of the company are: Dimitris Tsamis, CEO of SMARTS with a 25-year experience in different entrepreneurship initiatives and flagship ICT project management Kostas Mantes, Business Development Officer of SMARTS with a 25-year experience in different entrepreneurship initiatives Fotis Gogoulos, CTO of SMARTS with a PhD in privacy protection and a 10-year track record in software development and EU funded projects management Sotiris Pavleas, Business Analyst of SMARTS with a PhD in urban analysis and development and a 17-year experience in European development policies studies, Efthymios Farmakis, senior web developer with a 20-year software development experience, Tom Papagiannis, senior mobile developer with a 20-year software development experience.
+The growth and scalability potential of the platform is to be attributed to: a) digital transformation sector expected exponential growth, b) maturity of the European market to consume holistic remote services solutions, including mGovernment apps, now more than ever within and in the aftermath of the Covid crisis, c) the replicability and scalability of the platform itself, d) the vast experience of the co-founding and development team in large-scale ICT projects and the implementation of integrated solutions for State, Regional and Local Authorities</p>
+                                                <br/>
+                                                                        <h3>Funding Needs</h3>
+                            <p class="pre">SMARTS is seeking for 150K€, with a cost distribution of 80% personell and 20% other costs, to fund a 18M product development work plan, focusing on integrating sophisticated data analytics functionalities to provide with Voice of the Citizen/Customer services for State, Regional and Local Authorities and enhancing current Customer Acquisition Strategy for growing its customer base.</p>
+                                                <br/>
+                                    </div>
+            </div>
+        </div>
+        <!-- /grid item -->
+
+        <!-- Grid Item -->
+        <div class="col-xl-3 col-md-4 col-sm-5">
+            <!-- Card -->
+            <div class="dt-card bg-transparent shadow-none">
+                <div class="d-none d-sm-block">
+                    <!-- Entry Header -->
+                    <div class="dt-entry__header mb-5">
+                        ONE LINER                    </div>
+            
+                    <div>
+                        <p>PoliPragmon: Empowering citizens, elevating organizations, intensifying connections</p>
+                    </div>
+                </div>
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">TEAM</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                                                    <!-- Widget Item -->
+                        <div class="dt-widget__item px-0">
+                            <!-- Widget Image -->
+                            <div class="dt-widget__img">
+                                <!-- Avatar -->
+                                <img alt="Dimitris Tsamis" class="dt-avatar size-35 rounded" src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/placeholder.jpg"/>
+                                <!-- /avatar -->
+                            </div>
+                            <!-- /widget image -->
+                            <!-- Widget Info -->
+                            <div class="dt-widget__info">
+                                Dimitris Tsamis, CEO                            </div>
+                            <!-- /widget info -->
+                        </div>
+                        <!-- /widgets item -->
+                                                                    <!-- Widget Item -->
+                        <div class="dt-widget__item px-0">
+                            <!-- Widget Image -->
+                            <div class="dt-widget__img">
+                                <!-- Avatar -->
+                                <img alt="Kostas Mantes" class="dt-avatar size-35 rounded" src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/placeholder.jpg"/>
+                                <!-- /avatar -->
+                            </div>
+                            <!-- /widget image -->
+                            <!-- Widget Info -->
+                            <div class="dt-widget__info">
+                                Kostas Mantes, CoFounder                            </div>
+                            <!-- /widget info -->
+                        </div>
+                        <!-- /widgets item -->
+                                                                    <!-- Widget Item -->
+                        <div class="dt-widget__item px-0">
+                            <!-- Widget Image -->
+                            <div class="dt-widget__img">
+                                <!-- Avatar -->
+                                <img alt="Fotis Gogoulos" class="dt-avatar size-35 rounded" src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/placeholder.jpg"/>
+                                <!-- /avatar -->
+                            </div>
+                            <!-- /widget image -->
+                            <!-- Widget Info -->
+                            <div class="dt-widget__info">
+                                Fotis Gogoulos, CTO                            </div>
+                            <!-- /widget info -->
+                        </div>
+                        <!-- /widgets item -->
+                                                                    <!-- Widget Item -->
+                        <div class="dt-widget__item px-0">
+                            <!-- Widget Image -->
+                            <div class="dt-widget__img">
+                                <!-- Avatar -->
+                                <img alt="Efthymios  Farmakis " class="dt-avatar size-35 rounded" src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/placeholder.jpg"/>
+                                <!-- /avatar -->
+                            </div>
+                            <!-- /widget image -->
+                            <!-- Widget Info -->
+                            <div class="dt-widget__info">
+                                Efthymios  Farmakis , Other                            </div>
+                            <!-- /widget info -->
+                        </div>
+                        <!-- /widgets item -->
+                                                                    <!-- Widget Item -->
+                        <div class="dt-widget__item px-0">
+                            <!-- Widget Image -->
+                            <div class="dt-widget__img">
+                                <!-- Avatar -->
+                                <img alt="Tom  Papagiannis " class="dt-avatar size-35 rounded" src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/placeholder.jpg"/>
+                                <!-- /avatar -->
+                            </div>
+                            <!-- /widget image -->
+                            <!-- Widget Info -->
+                            <div class="dt-widget__info">
+                                Tom  Papagiannis , CoFounder                            </div>
+                            <!-- /widget info -->
+                        </div>
+                        <!-- /widgets item -->
+                                                                    <!-- Widget Item -->
+                        <div class="dt-widget__item px-0">
+                            <!-- Widget Image -->
+                            <div class="dt-widget__img">
+                                <!-- Avatar -->
+                                <img alt="Sotiris Pavleas" class="dt-avatar size-35 rounded" src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/placeholder.jpg"/>
+                                <!-- /avatar -->
+                            </div>
+                            <!-- /widget image -->
+                            <!-- Widget Info -->
+                            <div class="dt-widget__info">
+                                Sotiris Pavleas, Other                            </div>
+                            <!-- /widget info -->
+                        </div>
+                        <!-- /widgets item -->
+                                                                    <!-- Widget Item -->
+                        <div class="dt-widget__item px-0">
+                            <!-- Widget Image -->
+                            <div class="dt-widget__img">
+                                <!-- Avatar -->
+                                <img alt="Aris Verikokos" class="dt-avatar size-35 rounded" src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/placeholder.jpg"/>
+                                <!-- /avatar -->
+                            </div>
+                            <!-- /widget image -->
+                            <!-- Widget Info -->
+                            <div class="dt-widget__info">
+                                Aris Verikokos, Other                            </div>
+                            <!-- /widget info -->
+                        </div>
+                        <!-- /widgets item -->
+                                    </div>
+                <!-- /widget -->
+
+
+
+
+
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">FUNDING</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">PATENTS</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">AWARDS</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">INCUBATIONS/ACCELERATIONS</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Jobs</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+
+                <!-- Separator -->
+                <hr class="my-6"/>
+                <!-- /separator -->
+                
+                <!-- Entry Header -->
+                <div class="dt-entry__header mb-5">
+                    <!-- Entry Heading -->
+                    <div class="dt-entry__heading">
+                        <h3 class="dt-entry__title">Perks</h3>
+                    </div>
+                    <!-- /entry heading -->
+                </div>
+                <!-- /entry header -->
+
+                <!-- Widget -->
+                <div class="dt-widget dt-widget-hover">
+                                    </div>
+                <!-- /widget -->
+            </div>
+            <!-- /card -->
+        </div>
+        <!-- /grid item -->
+    </div>
+    <!-- /grid -->
+                                <!-- DpG/Mat25:35 -->
+                            </div>
+                            <!-- /site content -->
+
+                        </div>
+                        <!-- /site content wrapper -->
+                </main>
+                <!-- /main -->
+
+                <!-- Footer -->
+                <footer class="dt-footer">
+                    <div class="dt-container">
+                        <center>
+                            <div class="row" style="max-width:930px;">
+                                <div class="col">
+                                    <small>Provided By</small><br/>
+                                                                            <a href="https://www.elevategreece.gov.gr" target="_blank">
+                                            <img src="https://registry.elevategreece.gov.gr/uploads/2020/04/1586759140-logo_640.png" style="height:60px;"/>
+                                        </a>
+                                                                    </div>
+                                                                    <div class="col">
+                                    <small>Supported By</small><br/>
+                                        <img src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/eg/supporters.svg" style="height:60px;"/>
+                                    </div>
+                                                                <div class="col">
+                                    <small>Powered By</small><br/>
+                                    <a href="https://www.mantisbi.io" target="_blank">
+                                        <img src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/images/logo_mantis.png" style="height:60px;"/>
+                                    </a>
+                                </div>
+                            </div>
+                            <span style="height:7px !important;"> </span>
+                            <p>© 2023, All rigths reserved - Licensed to <b>National Startup Registry</b>, a <a href="https://www.mantisbi.io" target="_blank">Mantis Innovation Management System</a> installation.</p>
+                        </center>
+                    </div>
+                </footer>
+                <!-- /footer -->
+
+    	    </div>
+        </div>
+        <!-- /root -->
+        
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/moment.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/bootstrap.bundle.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/perfect-scrollbar.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/masonry.pkgd.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/sweetalert2.all.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/Chart.bundle.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/jquery.dataTables.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/dataTables.bootstrap4.min.js"></script>
+        <script src="https://registry.elevategreece.gov.gr/wp-content/themes/MantisIMS/assets/js/script.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-164790695-1"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);} gtag("js", new Date()); gtag("config", "UA-164790695-1");</script>    
+
+</body></html>

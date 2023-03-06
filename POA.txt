@@ -4,15 +4,22 @@ Develop a tool to report in realtime the activities of any given company.
 
 
 Next Steps:
-    * [-] For each website in 'Greek Startups/Excel Files & Processing/
+    * [X] For each website in 'Greek Startups/Excel Files & Processing/
       SU_websites.txt' using BS check if the website returns a .html file
       for URL that does write 'yes' otherwise write 'no' with the URL.
       These results should be written to a .csv file.
     * [-] Solve for the URL links that returned 'no'.
-    * [-] For each webpage extract the whole .html code
+    * [X] For each webpage extract the whole .html code
     * [-] For each webpage extract the human-friendly readable text from
       and store each in a text document
     * [-] In the tool be able to pass the text file to the GPT model
+
+
+Analysis LLM (Improvement):
+    * [-] Pass sliding window over text to capture all text
+    * [-] Generate multiple reports given the same text to combine the reports
+    * [-] For each line or group of lines analyze whether this is actually
+          an 'activity' (could use POS-tagging)
 
 
 Naive-Brute-Force POA (tasks):
