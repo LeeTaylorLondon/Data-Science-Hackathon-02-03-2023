@@ -2,20 +2,20 @@
 Develop a tool to report in realtime the activities of any given company.
 
 ## How to Use - Realtime Report
-* Create a python file called `api_key.py` add a string: 
+1. Create a python file called `api_key.py` add a string: 
 ```python
 API_KEY = '<YOUR API KEY HERE>'
 ```
-* Generate an OpenAI key [here](https://platform.openai.com/account/api-keys).
-* Execute `main.py` or `Render.py` 
-* Input a company name into the 'Company Name:' field
+2. Generate an OpenAI key [here](https://platform.openai.com/account/api-keys).
+3. Execute `main.py` or `Render.py` 
+4. Input a company name into the 'Company Name:' field
 
 ## `Render.py` Example Usage
 ![Image](/images/rm1.png)  
-* The user inputs a company name
-* The first google result is parsed for human friendly readable text
-* This text and the objective is passed to [OpenAIs LLM text-davinci-003](https://platform.openai.com/docs/guides/completion) as a prompt
-* A bullet point list of activities conducted by the company is outputted
+1. The user inputs a company name
+2. The first google result is parsed for human friendly readable text
+3. This text and the objective is passed to [OpenAIs LLM text-davinci-003](https://platform.openai.com/docs/guides/completion) as a prompt
+4. A bullet point list of activities conducted by the company is outputted
 
 ## Dataset & Data Collection
 The 'elevate' website is a platform that contains information about 711 startups. 
