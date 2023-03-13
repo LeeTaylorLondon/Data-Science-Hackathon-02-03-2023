@@ -45,8 +45,8 @@ def on_enter(event=None):
     soup = URL_Functions.url_to_soup_obj(urls[0])
     text = URL_Functions.extract_text(soup, headers=False)
     # Analysis - pass .html text to LLM
-    text = process_text(text)  # Shortens and focuses text
-    prompt_  = Analysis_LLM.create_prompt(paragraphs=text,
+    text    = process_text(text)  # Shortens and focuses text
+    prompt_ = Analysis_LLM.create_prompt(paragraphs=text,
                                           suffix='Also start your response with '
                                                  'a word classifying the company.')
     response = Analysis_LLM.gen_response(prompt_)

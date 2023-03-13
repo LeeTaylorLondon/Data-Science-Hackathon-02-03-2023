@@ -1,5 +1,32 @@
 # Company Activities Interpretation Tool
-Develop a tool to report in realtime the activities of any given company.
+**Objective:** Develop a tool to report in realtime the activities of any given company.
+
+### Approach
+
+Firstly the `URL_Functions` module is used to perform a Google search using 
+the `company_name` as the search string. It obtains the first URL from 
+the search results, converts it into a soup object, and extracts the text 
+content of the URL.
+
+The `extract_text` function is a web scraping function that takes in a 
+`soup` object, which is generated from an HTML page, and a boolean value 
+`headers`, which determines whether or not to include headers in the 
+extracted text. The function first finds all HTML elements that contain 
+the main content of the page, depending on the value of `headers` 
+the elements could be `p`, `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `a`, 
+`li`, `span`, `strong`, and `em` elements. Then, it concatenates the
+text from all these content elements and removes non-human friendly 
+empty spaces, and sentences with keywords such as "site", "cookie", 
+"sign in", "instagram", and "contact us". Finally, it removes any 
+code elements and returns the resulting text as a string.
+
+The extracted text is then passed to the `process_text` function,
+which processes the text to shorten and focus it. This processed 
+text is then passed to the `Analysis_LLM` module to create a prompt 
+for OpenAI's language model. The language model is then used to 
+generate a response based on the prompt. The generated response 
+is then processed by the `response_text` function to obtain the 
+final output.
 
 ## How to Use - Realtime Report
 1. Create a python file called `api_key.py` add a string: 
